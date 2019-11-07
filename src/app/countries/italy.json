@@ -1,0 +1,105 @@
+[
+        {
+            "name": "Italy",
+            "chart_name": "italy"
+        },
+        {
+            "name": "Abruzzo",
+            "chart_name": "abruzzo"
+        },
+        {
+            "name": "Basilicata",
+            "chart_name": "basilicata"
+        },
+        
+        {
+            "name": "Calabria",
+            "chart_name": "calabria"
+        },
+        
+        {
+            "name": "Campania",
+            "chart_name": "campania"
+        },
+        
+        {
+            "name": "Emilia-Romagna",
+            "chart_name": "emiliaromagna"
+        },
+        
+        {
+            "name": "Friuli-Venezia Giulia",
+            "chart_name": "friuliveneziagiulia"
+        },
+        
+        {
+            "name": "Lazio",
+            "chart_name": "lazio"
+        },
+        
+        
+        {
+            "name": "Liguria",
+            "chart_name": "liguria"
+        },
+
+        {
+            "name": "Lobmbardia",
+            "chart_name": "lombardy"
+        },
+        
+        {
+            "name": "Marche",
+            "chart_name": "marche"
+        },
+        
+        {
+            "name": "Molise",
+            "chart_name": "molise"
+        },
+        
+        {
+            "name": "Piemonte",
+            "chart_name": "piedmont"
+        },
+        
+        {
+            "name": "Puglia",
+            "chart_name": "apulia"
+        },
+        
+        {
+            "name": "Sardegna",
+            "chart_name": "sardinia"
+        },
+        
+        {
+            "name": "Sicilia",
+            "chart_name": "sicily"
+        },
+        
+        {
+            "name": "Trentino-Alto Adige",
+            "chart_name": "trentinoaltoadige"
+        },
+        
+        {
+            "name": "Toscana",
+            "chart_name": "tuscany"
+        },
+        
+        {
+            "name": "Umbria",
+            "chart_name": "umbria"
+        },
+        
+        {
+            "name": "Veneto",
+            "chart_name": "veneto"
+        },
+        
+        {
+            "name": "Valle d'Aosta",
+            "chart_name": "valledaosta"
+        }
+    ]

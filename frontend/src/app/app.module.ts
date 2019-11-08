@@ -41,13 +41,33 @@ import * as ValleDAosta from "fusionmaps/maps/fusioncharts.valledaosta";
 //FRANCE
 import * as France from "fusionmaps/maps/fusioncharts.france";
 
+//GERMANY
+import * as Germany from "fusionmaps/maps/fusioncharts.germany";
+import * as BadenWuerttemberg from 'fusionmaps/maps/fusioncharts.badenwurttemberg';
+import * as Bavaria from 'fusionmaps/maps/fusioncharts.bavaria';
+import * as Saarland from 'fusionmaps/maps/fusioncharts.saarland';
+import * as RhinelandPalatinate from 'fusionmaps/maps/fusioncharts.rhinelandpalatinate';
+import * as Hesse from 'fusionmaps/maps/fusioncharts.hesse';
+import * as Thueringen from 'fusionmaps/maps/fusioncharts.thuringia';
+import * as Sachsen from 'fusionmaps/maps/fusioncharts.saxony';
+import * as SaxonyAnhalt from 'fusionmaps/maps/fusioncharts.sachsenanhalt';
+import * as Brandenburg from 'fusionmaps/maps/fusioncharts.brandenburg';
+import * as Berlin from 'fusionmaps/maps/fusioncharts.berlin';
+import * as MecklenburgVorpommern from 'fusionmaps/maps/fusioncharts.mecklenburgvorpommern';
+import * as SchleswigHolstein from 'fusionmaps/maps/fusioncharts.schleswigholstein';
+import * as LowerSaxony from 'fusionmaps/maps/fusioncharts.lowersaxony';
+import * as NorthRhineWestphalia from 'fusionmaps/maps/fusioncharts.northrhinewestphalia';
 //SPAIN
 import * as Spain from "fusionmaps/maps/fusioncharts.spain";
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
   Italy, Abruzzo, Basilicata, Calabria, Campania, EmiliaRomagna, FriuliVeneziaGiulia, Lazio, Liguria, Lombardia, Marche, Molise, Piemonte, Puglia, Sardegna, Sicilia, TrentinoAltoAdige, Toscana, Umbria, Veneto, ValleDAosta,
-   France, Spain, World, FusionTheme)
+  France,
+  Germany, BadenWuerttemberg, Bavaria, Saarland, RhinelandPalatinate, Hesse, Thueringen, Sachsen, SaxonyAnhalt, Brandenburg, Berlin, MecklenburgVorpommern, SchleswigHolstein, LowerSaxony, NorthRhineWestphalia,
+  Spain,
+  World,
+  FusionTheme)
 
 
 @NgModule({

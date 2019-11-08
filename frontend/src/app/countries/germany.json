@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Germany",
+        "chart_name": "germany"
+    },
+    {
+        "name": "Baden-Wuerttemberg",
+        "chart_name": "badenwurttemberg"
+    },
+    {
+        "name": "Bavaria",
+        "chart_name": "bavaria"
+    },
+    {
+        "name": "Saarland",
+        "chart_name": "saarland"
+    },
+    {
+        "name": "Rhineland-Palatinate",
+        "chart_name": "rhinelandpalatinate"
+    },
+    {
+        "name": "Hesse",
+        "chart_name": "hesse"
+    },
+    {
+        "name": "Thueringen",
+        "chart_name": "thuringia"
+    },
+    {
+        "name": "Sachsen",
+        "chart_name": "saxony"
+    },
+    {
+        "name": "Saxony-Anhalt",
+        "chart_name": "sachsenanhalt"
+    },
+    {
+        "name": "Brandenburg",
+        "chart_name": "brandenburg"
+    },
+    {
+        "name": "Berlin",
+        "chart_name": "berlin"
+    },
+    {
+        "name": "Mecklenburg-Vorpommern",
+        "chart_name": "mecklenburgvorpommern"
+    },
+    {
+        "name": "Schleswig-Holstein",
+        "chart_name": "schleswigholstein"
+    },
+    {
+        "name": "Lower Saxony",
+        "chart_name": "lowersaxony"
+    },
+    {
+        "name": "North Rhine-Westphalia",
+        "chart_name": "northrhinewestphalia"
+    }
+]

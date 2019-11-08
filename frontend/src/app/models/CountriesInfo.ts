@@ -2,8 +2,9 @@ import { CountryInfo } from './CountryInfo.js';
 import * as italy from "./../countries/italy.json";
 import * as france from './../countries/france.json';
 import * as germany from './../countries/germany.json';
+import * as finland from './../countries/finland.json';
 
-const COUNTRIES = [italy, france, germany];
+const COUNTRIES = [italy, finland, france, germany];
 
 let dictionary: {[name: string]: string} = {}
 

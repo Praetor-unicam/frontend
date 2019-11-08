@@ -38,6 +38,9 @@ import * as Umbria from "fusionmaps/maps/fusioncharts.umbria";
 import * as Veneto from "fusionmaps/maps/fusioncharts.veneto";
 import * as ValleDAosta from "fusionmaps/maps/fusioncharts.valledaosta";
 
+//FINLAND
+import * as Finalnd from 'fusionmaps/maps/fusioncharts.finland';
+
 //FRANCE
 import * as France from "fusionmaps/maps/fusioncharts.france";
 
@@ -63,6 +66,7 @@ import * as Spain from "fusionmaps/maps/fusioncharts.spain";
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
   Italy, Abruzzo, Basilicata, Calabria, Campania, EmiliaRomagna, FriuliVeneziaGiulia, Lazio, Liguria, Lombardia, Marche, Molise, Piemonte, Puglia, Sardegna, Sicilia, TrentinoAltoAdige, Toscana, Umbria, Veneto, ValleDAosta,
+  Finalnd,
   France,
   Germany, BadenWuerttemberg, Bavaria, Saarland, RhinelandPalatinate, Hesse, Thueringen, Sachsen, SaxonyAnhalt, Brandenburg, Berlin, MecklenburgVorpommern, SchleswigHolstein, LowerSaxony, NorthRhineWestphalia,
   Spain,

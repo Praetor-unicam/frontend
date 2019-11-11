@@ -42,7 +42,15 @@ import * as ValleDAosta from "fusionmaps/maps/fusioncharts.valledaosta";
 import * as Finalnd from 'fusionmaps/maps/fusioncharts.finland';
 
 //FRANCE
-import * as France from "fusionmaps/maps/fusioncharts.france";
+import * as France from "fusionmaps/maps/fusioncharts.france2016";
+import * as Corsica from "fusionmaps/maps/fusioncharts.corsica";
+import * as Réunion from "fusionmaps/maps/fusioncharts.reunion";
+import * as Mayotte from "fusionmaps/maps/fusioncharts.mayotte";
+import * as FrenchGuiana from "fusionmaps/maps/fusioncharts.frenchguiana";
+import * as Martinique from "fusionmaps/maps/fusioncharts.martinique";
+import * as Guadeloupe from "fusionmaps/maps/fusioncharts.guadeloupe";
+import * as PACA from "fusionmaps/maps/fusioncharts.provencealpescotedazur";
+import * as Occitania from "fusionmaps/maps/fusioncharts.occitanie";
 
 //GERMANY
 import * as Germany from "fusionmaps/maps/fusioncharts.germany";
@@ -67,7 +75,7 @@ import * as Spain from "fusionmaps/maps/fusioncharts.spain";
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
   Italy, Abruzzo, Basilicata, Calabria, Campania, EmiliaRomagna, FriuliVeneziaGiulia, Lazio, Liguria, Lombardia, Marche, Molise, Piemonte, Puglia, Sardegna, Sicilia, TrentinoAltoAdige, Toscana, Umbria, Veneto, ValleDAosta,
   Finalnd,
-  France,
+  France, Corsica, Réunion, Mayotte, FrenchGuiana, Martinique, Guadeloupe, PACA, Occitania,
   Germany, BadenWuerttemberg, Bavaria, Saarland, RhinelandPalatinate, Hesse, Thueringen, Sachsen, SaxonyAnhalt, Brandenburg, Berlin, MecklenburgVorpommern, SchleswigHolstein, LowerSaxony, NorthRhineWestphalia,
   Spain,
   World,

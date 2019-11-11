@@ -1,9 +1,38 @@
 [
     {
         "name": "France",
-        "chart_name": "france"
+        "chart_name": "france2016"
     },
     {
-        
+        "name": "Corsica",
+        "chart_name": "corsica"
+    },
+    {
+        "name": "Réunion",
+        "chart_name": "reunion"
+    },
+    {
+        "name": "Mayotte",
+        "chart_name": "mayotte"
+    },
+    {
+        "name": "French Guiana",
+        "chart_name": "frenchguiana"
+    },
+    {
+        "name": "Martinique",
+        "chart_name": "martinique"
+    },
+    {
+        "name": "Guadeloupe",
+        "chart_name": "guadeloupe"
+    },
+    {
+        "name": "Provence-Alpes-Côte-d'Azur",
+        "chart_name": "provencealpescotedazur"
+    },
+    {
+        "name": "Occitania",
+        "chart_name": "occitanie"
     }
 ]

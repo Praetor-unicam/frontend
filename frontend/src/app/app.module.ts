@@ -51,6 +51,15 @@ import * as Martinique from "fusionmaps/maps/fusioncharts.martinique";
 import * as Guadeloupe from "fusionmaps/maps/fusioncharts.guadeloupe";
 import * as PACA from "fusionmaps/maps/fusioncharts.provencealpescotedazur";
 import * as Occitania from "fusionmaps/maps/fusioncharts.occitanie";
+import * as NouvelleAquitaine from "fusionmaps/maps/fusioncharts.nouvelleaquitaine";
+import * as AuvergneRhoneAlpes from "fusionmaps/maps/fusioncharts.auvergnerhonealpes";
+import * as BourgogneFrancheComté from "fusionmaps/maps/fusioncharts.bourgognefranchecomte";
+import * as CentreValdeLoire from "fusionmaps/maps/fusioncharts.centrevaldeloire";
+import * as PaysdelaLoire from "fusionmaps/maps/fusioncharts.paysdelaloire";
+import * as Brittany from "fusionmaps/maps/fusioncharts.brittany";
+import * as GrandEst from "fusionmaps/maps/fusioncharts.grandest";
+import * as HautsdeFrance from "fusionmaps/maps/fusioncharts.hautsdefrance";
+import * as Normandy from "fusionmaps/maps/fusioncharts.normandy";
 
 //GERMANY
 import * as Germany from "fusionmaps/maps/fusioncharts.germany";
@@ -75,7 +84,7 @@ import * as Spain from "fusionmaps/maps/fusioncharts.spain";
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
   Italy, Abruzzo, Basilicata, Calabria, Campania, EmiliaRomagna, FriuliVeneziaGiulia, Lazio, Liguria, Lombardia, Marche, Molise, Piemonte, Puglia, Sardegna, Sicilia, TrentinoAltoAdige, Toscana, Umbria, Veneto, ValleDAosta,
   Finalnd,
-  France, Corsica, Réunion, Mayotte, FrenchGuiana, Martinique, Guadeloupe, PACA, Occitania,
+  France, Corsica, Réunion, Mayotte, FrenchGuiana, Martinique, Guadeloupe, PACA, Occitania, NouvelleAquitaine, AuvergneRhoneAlpes, BourgogneFrancheComté, CentreValdeLoire, PaysdelaLoire, Brittany, GrandEst, HautsdeFrance, Normandy,
   Germany, BadenWuerttemberg, Bavaria, Saarland, RhinelandPalatinate, Hesse, Thueringen, Sachsen, SaxonyAnhalt, Brandenburg, Berlin, MecklenburgVorpommern, SchleswigHolstein, LowerSaxony, NorthRhineWestphalia,
   Spain,
   World,

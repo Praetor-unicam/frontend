@@ -34,5 +34,41 @@
     {
         "name": "Occitania",
         "chart_name": "occitanie"
+    },
+    {
+        "name": "Nouvelle-Aquitaine",
+        "chart_name": "nouvelleaquitaine"
+    },
+    {
+        "name": "Auvergne-Rhône-Alpes",
+        "chart_name": "auvergnerhonealpes"
+    },
+    {
+        "name": "Bourgogne-Franche-Comté",
+        "chart_name": "bourgognefranchecomte"
+    },
+    {
+        "name": "Centre-Val de Loire",
+        "chart_name": "centrevaldeloire"
+    },
+    {
+        "name": "Pays de la Loire",
+        "chart_name": "paysdelaloire"
+    },
+    {
+        "name": "Brittany",
+        "chart_name": "brittany"
+    },
+    {
+        "name": "Grand Est",
+        "chart_name": "grandest"
+    },
+    {
+        "name": "Hauts-de-France",
+        "chart_name": "hautsdefrance"
+    },
+    {
+        "name": "Normandy",
+        "chart_name": "normandy"
     }
 ]

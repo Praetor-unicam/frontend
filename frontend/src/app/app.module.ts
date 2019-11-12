@@ -77,8 +77,26 @@ import * as MecklenburgVorpommern from 'fusionmaps/maps/fusioncharts.mecklenburg
 import * as SchleswigHolstein from 'fusionmaps/maps/fusioncharts.schleswigholstein';
 import * as LowerSaxony from 'fusionmaps/maps/fusioncharts.lowersaxony';
 import * as NorthRhineWestphalia from 'fusionmaps/maps/fusioncharts.northrhinewestphalia';
+
 //SPAIN
 import * as Spain from "fusionmaps/maps/fusioncharts.spain";
+import * as BalearicIslands from "fusionmaps/maps/fusioncharts.balearicislands";
+import * as CanaryIslands from "fusionmaps/maps/fusioncharts.canaryislands";
+import * as RegionofMurcia from "fusionmaps/maps/fusioncharts.regionofmurcia";
+import * as Andalusia from "fusionmaps/maps/fusioncharts.andalusia";
+import * as ValencianCommunity from "fusionmaps/maps/fusioncharts.valenciancommunity";
+import * as CastillaLaMancha from "fusionmaps/maps/fusioncharts.castillalamancha";
+import * as Extremadura from "fusionmaps/maps/fusioncharts.extremadura";
+import * as CommunityofMadrid from "fusionmaps/maps/fusioncharts.communityofmadrid";
+import * as Catalonia from "fusionmaps/maps/fusioncharts.catalonia";
+import * as Aragon from "fusionmaps/maps/fusioncharts.aragon";
+import * as Castileandleon from "fusionmaps/maps/fusioncharts.castileandleon";
+import * as Navarre from "fusionmaps/maps/fusioncharts.navarre";
+import * as LaRioja from "fusionmaps/maps/fusioncharts.larioja";
+import * as BasqueCountry from "fusionmaps/maps/fusioncharts.basquecountry";
+import * as Cantabria from "fusionmaps/maps/fusioncharts.cantabria";
+import * as Asturias from "fusionmaps/maps/fusioncharts.asturias";
+import * as Galicia from "fusionmaps/maps/fusioncharts.galicia";
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
@@ -86,7 +104,7 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   Finalnd,
   France, Corsica, Réunion, Mayotte, FrenchGuiana, Martinique, Guadeloupe, PACA, Occitania, NouvelleAquitaine, AuvergneRhoneAlpes, BourgogneFrancheComté, CentreValdeLoire, PaysdelaLoire, Brittany, GrandEst, HautsdeFrance, Normandy,
   Germany, BadenWuerttemberg, Bavaria, Saarland, RhinelandPalatinate, Hesse, Thueringen, Sachsen, SaxonyAnhalt, Brandenburg, Berlin, MecklenburgVorpommern, SchleswigHolstein, LowerSaxony, NorthRhineWestphalia,
-  Spain,
+  Spain, BalearicIslands, CanaryIslands, RegionofMurcia, Andalusia, ValencianCommunity, CastillaLaMancha, Extremadura, CommunityofMadrid, Catalonia, Aragon, Castileandleon, Navarre, LaRioja, BasqueCountry, Cantabria, Asturias, Galicia,
   World,
   FusionTheme)
 

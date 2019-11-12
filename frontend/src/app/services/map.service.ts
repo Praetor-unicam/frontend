@@ -15,7 +15,9 @@ export class MapService {
       entitytooltext: "$lname",
       entityfillhovercolor: "#FFCDD2",
       nullentitycolor: "#ff0000",
-      theme: "fusion"
+      theme: "fusion",
+      borderColor: "#000000",
+      
     },
     colorrange: {
       gradient: "0",

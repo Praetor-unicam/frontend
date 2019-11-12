@@ -15,6 +15,20 @@ import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 //EUROPE
 import * as Europe from "fusionmaps/maps/fusioncharts.europe";
 
+//BELGIUM
+import * as Belgium from "fusionmaps/maps/fusioncharts.belgium";
+import * as Luxembourg from "fusionmaps/maps/fusioncharts.luxembourg";
+import * as Namur from "fusionmaps/maps/fusioncharts.namur";
+import * as Hainaut from "fusionmaps/maps/fusioncharts.hainaut";
+import * as Liege from "fusionmaps/maps/fusioncharts.liege";
+import * as BrabantWallon from "fusionmaps/maps/fusioncharts.walloonbrabant";
+import * as Limburg from "fusionmaps/maps/fusioncharts.limburgbgomeenten";
+import * as VlaamsBrabant from "fusionmaps/maps/fusioncharts.flemishbrabant";
+import * as Brussels from "fusionmaps/maps/fusioncharts.brussels";
+import * as OostVlaanderen from "fusionmaps/maps/fusioncharts.eastflanders";
+import * as WestVlaanderen from "fusionmaps/maps/fusioncharts.westflanders";
+import * as Antwerpen from "fusionmaps/maps/fusioncharts.antwerp";
+
 //ITALY
 import * as Italy from "fusionmaps/maps/fusioncharts.italy";
 import * as Abruzzo from "fusionmaps/maps/fusioncharts.abruzzo";
@@ -100,6 +114,7 @@ import * as Galicia from "fusionmaps/maps/fusioncharts.galicia";
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
+  Belgium, Luxembourg, Namur, Hainaut, Liege, BrabantWallon, Limburg, VlaamsBrabant, Brussels, OostVlaanderen, WestVlaanderen, Antwerpen,
   Italy, Abruzzo, Basilicata, Calabria, Campania, EmiliaRomagna, FriuliVeneziaGiulia, Lazio, Liguria, Lombardia, Marche, Molise, Piemonte, Puglia, Sardegna, Sicilia, TrentinoAltoAdige, Toscana, Umbria, Veneto, ValleDAosta,
   Finalnd,
   France, Corsica, Réunion, Mayotte, FrenchGuiana, Martinique, Guadeloupe, PACA, Occitania, NouvelleAquitaine, AuvergneRhoneAlpes, BourgogneFrancheComté, CentreValdeLoire, PaysdelaLoire, Brittany, GrandEst, HautsdeFrance, Normandy,

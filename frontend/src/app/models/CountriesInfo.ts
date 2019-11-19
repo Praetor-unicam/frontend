@@ -5,8 +5,9 @@ import * as germany from './../countries/germany.json';
 import * as finland from './../countries/finland.json';
 import * as spain from './../countries/spain.json';
 import * as belgium from './../countries/belgium.json';
+import * as poland from './../countries/poland.json';
 
-const COUNTRIES = [italy, finland, france, germany, spain, belgium];
+const COUNTRIES = [italy, finland, france, germany, spain, belgium, poland];
 
 let dictionary: {[name: string]: string} = {}
 

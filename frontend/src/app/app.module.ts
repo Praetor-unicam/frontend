@@ -92,6 +92,25 @@ import * as SchleswigHolstein from 'fusionmaps/maps/fusioncharts.schleswigholste
 import * as LowerSaxony from 'fusionmaps/maps/fusioncharts.lowersaxony';
 import * as NorthRhineWestphalia from 'fusionmaps/maps/fusioncharts.northrhinewestphalia';
 
+//POLAND
+import * as Poland from 'fusionmaps/maps/fusioncharts.poland';
+import * as Podkarpackie from 'fusionmaps/maps/fusioncharts.podkarpackie';
+import * as Małopolskie from 'fusionmaps/maps/fusioncharts.malopolskie';
+import * as Śląskie from 'fusionmaps/maps/fusioncharts.slaskie';
+import * as Opolskie from 'fusionmaps/maps/fusioncharts.opolskie';
+import * as Dolnośląskie from 'fusionmaps/maps/fusioncharts.dolnoslaskie';
+import * as Lubelskie from 'fusionmaps/maps/fusioncharts.lubelskie';
+import * as Świętokrzyskie from 'fusionmaps/maps/fusioncharts.swietokrzyskie';
+import *  as Mazowieckie from 'fusionmaps/maps/fusioncharts.mazowieckie';
+import * as Lódzkie from 'fusionmaps/maps/fusioncharts.lodzkie';
+import * as Wielkopolskie from 'fusionmaps/maps/fusioncharts.wielkopolskie';
+import * as Lubuskie from 'fusionmaps/maps/fusioncharts.lubuskie';
+import * as KujawskoPomorskie from 'fusionmaps/maps/fusioncharts.kujawskopomorskie';
+import * as Podlaskie from 'fusionmaps/maps/fusioncharts.podlaskie';
+import *  as WarmińskoMazurskie from 'fusionmaps/maps/fusioncharts.warminskomazurskie';
+import * as Pomorskie from 'fusionmaps/maps/fusioncharts.pomorskie';
+import * as Zachodniopomorskie from 'fusionmaps/maps/fusioncharts.zachodniopomorskie';
+
 //SPAIN
 import * as Spain from "fusionmaps/maps/fusioncharts.spain";
 import * as BalearicIslands from "fusionmaps/maps/fusioncharts.balearicislands";
@@ -120,6 +139,7 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   France, Corsica, Réunion, Mayotte, FrenchGuiana, Martinique, Guadeloupe, PACA, Occitania, NouvelleAquitaine, AuvergneRhoneAlpes, BourgogneFrancheComté, CentreValdeLoire, PaysdelaLoire, Brittany, GrandEst, HautsdeFrance, Normandy,
   Germany, BadenWuerttemberg, Bavaria, Saarland, RhinelandPalatinate, Hesse, Thueringen, Sachsen, SaxonyAnhalt, Brandenburg, Berlin, MecklenburgVorpommern, SchleswigHolstein, LowerSaxony, NorthRhineWestphalia,
   Spain, BalearicIslands, CanaryIslands, RegionofMurcia, Andalusia, ValencianCommunity, CastillaLaMancha, Extremadura, CommunityofMadrid, Catalonia, Aragon, Castileandleon, Navarre, LaRioja, BasqueCountry, Cantabria, Asturias, Galicia,
+  Poland, Podkarpackie, Małopolskie, Śląskie, Opolskie, Dolnośląskie, Lubelskie, Świętokrzyskie, Mazowieckie, Lódzkie, Wielkopolskie, Lubuskie, KujawskoPomorskie, Podlaskie, WarmińskoMazurskie, Pomorskie, Zachodniopomorskie,
   World,
   FusionTheme)
 

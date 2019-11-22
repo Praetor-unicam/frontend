@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Portugal",
+    "chart_name": "portugal"
+  },
+  {
+    "name": "Porto",
+    "chart_name": "porto"
+  },
+  {
+    "name": "Aveiro",
+    "chart_name": "aveiro"
+  },
+  {
+    "name": "Beja",
+    "chart_name": "beja"
+  },
+  {
+    "name": "Braga",
+    "chart_name": "braga"
+  },
+  {
+    "name": "Braganca",
+    "chart_name": "braganca"
+  },
+  {
+    "name": "Castelobranco",
+    "chart_name": "castelobranco"
+  },
+  {
+    "name": "Coimbra",
+    "chart_name": "coimbra"
+  },
+  {
+    "name": "Faro",
+    "chart_name": "faro"
+  },
+  {
+    "name": "Guarda",
+    "chart_name": "guarda"
+  },
+  {
+    "name": "Loei",
+    "chart_name": "loei"
+  },
+  {
+    "name": "Lisboa",
+    "chart_name": "lisboa"
+  },
+  {
+    "name": "Loei",
+    "chart_name": "loei"
+  },
+  {
+    "name": "Portoalegre",
+    "chart_name": "portalegre"
+  },
+  {
+    "name": "Santarem",
+    "chart_name": "santarem"
+  },
+  {
+    "name": "Setubal",
+    "chart_name": "setubal"
+  },
+  {
+    "name": "Vianadocastelo",
+    "chart_name": "vianadocastelo"
+  },
+  {
+    "name": "SetVillaclara",
+    "chart_name": "villaclara"
+  },
+  {
+    "name": "Viseu",
+    "chart_name": "viseu"
+  },
+  {
+    "name": "Evora",
+    "chart_name": "evora"
+  }
+]

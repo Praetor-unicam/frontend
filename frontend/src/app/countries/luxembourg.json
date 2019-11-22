@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Luxembourg",
+    "chart_name": "luxembourg"
+  },
+  {
+    "name": "Capellen",
+    "chart_name": ""
+  },
+  {
+    "name": "Clervaux",
+    "chart_name": ""
+  },
+  {
+    "name": "Diekirch",
+    "chart_name": ""
+  },
+  {
+    "name": "Echternach",
+    "chart_name": ""
+  },
+  {
+    "name": "Eschsuralzette",
+    "chart_name": ""
+  },
+  {
+    "name": "Grevenmacher",
+    "chart_name": ""
+  },
+  {
+    "name": "Mersch",
+    "chart_name": ""
+  },
+  {
+    "name": "Redange",
+    "chart_name": ""
+  },
+  {
+    "name": "Remich",
+    "chart_name": ""
+  },
+  {
+    "name": "Vianden",
+    "chart_name": ""
+  },
+  {
+    "name": "Wiltz",
+    "chart_name": ""
+  }
+]

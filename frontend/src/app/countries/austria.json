@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Austria",
+    "chart_name": "austria"
+  },
+  {
+    "name": "Burgenland",
+    "chart_name": "burgenland"
+  },
+  {
+    "name": "Kärnten",
+    "chart_name": ""
+  },
+  {
+    "name": "Niederösterreich",
+    "chart_name": "niederosterreich"
+  },
+  {
+    "name": "Oberösterreich",
+    "chart_name": "oberosterreich"
+  },
+  {
+    "name": "Salzburg",
+    "chart_name": "salzburg"
+  },
+  {
+    "name": "Steiermark",
+    "chart_name": "steiermark"
+  },
+  {
+    "name": "Tirol",
+    "chart_name": "tirol"
+  },
+  {
+    "name": "Vorarlberg",
+    "chart_name": "vorarlberg"
+  },
+  {
+    "name": "Wien",
+    "chart_name": "wien"
+  }
+]

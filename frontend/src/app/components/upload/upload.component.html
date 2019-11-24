@@ -7,10 +7,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Luxembourg</td>
-      <td>Available</td>
-      <td><button class="btn btn-info">Upload</button></td>
+    <tr *ngFor='let endpoint of endpoints'>
+      <td>{{endpoint.country}}</td>
+      <td>{{endpoint.status}}</td>
+      <td *ngIf='endpoint.status == "AVAILABLE"'><button class="btn btn-info">Upload</button></td>
+      <td  *ngIf='endpoint.status == "NOT_AVAILABLE"' ><button class="btn btn-info" disabled>Upload</button></td>
     </tr>
   </tbody>
 </table>

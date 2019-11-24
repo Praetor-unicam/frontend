@@ -18,7 +18,6 @@ import * as Europe from "fusionmaps/maps/fusioncharts.europe";
 
 //BELGIUM
 import * as Belgium from "fusionmaps/maps/fusioncharts.belgium";
-import * as Luxembourg from "fusionmaps/maps/fusioncharts.luxembourg";
 import * as Namur from "fusionmaps/maps/fusioncharts.namur";
 import * as Hainaut from "fusionmaps/maps/fusioncharts.hainaut";
 import * as Liege from "fusionmaps/maps/fusioncharts.liege";
@@ -100,7 +99,7 @@ import * as Flevoland from 'fusionmaps/maps/fusioncharts.netherlands';
 import * as Friesland from 'fusionmaps/maps/fusioncharts.netherlands';
 import * as Gelderland from 'fusionmaps/maps/fusioncharts.netherlands';
 import * as Groningen from 'fusionmaps/maps/fusioncharts.netherlands';
-import * as Limburg from 'fusionmaps/maps/fusioncharts.limburgbgomeenten';
+import * as LimburgBgomeenten from 'fusionmaps/maps/fusioncharts.limburgbgomeenten';
 import * as Noordbrabant from 'fusionmaps/maps/fusioncharts.netherlands';
 import * as Noordholland from 'fusionmaps/maps/fusioncharts.netherlands';
 import * as Overijssel from 'fusionmaps/maps/fusioncharts.netherlands';
@@ -291,6 +290,7 @@ import * as BasqueCountry from "fusionmaps/maps/fusioncharts.basquecountry";
 import * as Cantabria from "fusionmaps/maps/fusioncharts.cantabria";
 import * as Asturias from "fusionmaps/maps/fusioncharts.asturias";
 import * as Galicia from "fusionmaps/maps/fusioncharts.galicia";
+import { MapComponent } from './components/map/map.component';
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
@@ -301,13 +301,13 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   Germany, BadenWuerttemberg, Bavaria, Saarland, RhinelandPalatinate, Hesse, Thueringen, Sachsen, SaxonyAnhalt, Brandenburg, Berlin, MecklenburgVorpommern, SchleswigHolstein, LowerSaxony, NorthRhineWestphalia,
   Spain, BalearicIslands, CanaryIslands, RegionofMurcia, Andalusia, ValencianCommunity, CastillaLaMancha, Extremadura, CommunityofMadrid, Catalonia, Aragon, Castileandleon, Navarre, LaRioja, BasqueCountry, Cantabria, Asturias, Galicia,
   Poland, Podkarpackie, Małopolskie, Śląskie, Opolskie, Dolnośląskie, Lubelskie, Świętokrzyskie, Mazowieckie, Lódzkie, Wielkopolskie, Lubuskie, KujawskoPomorskie, Podlaskie, WarmińskoMazurskie, Pomorskie, Zachodniopomorskie,
-   Netherlands,
+  Netherlands,
   Drenthe,
   Flevoland,
   Friesland,
   Gelderland,
   Groningen,
-  Limburg,
+  LimburgBgomeenten,
   Noordbrabant,
   Noordholland,
   Overijssel,
@@ -451,12 +451,23 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   Vorarlberg,
   Wien,
   World,
-  FusionTheme)
-);
+  FusionTheme);
+
+  const appRoutes: Routes = [
+    { path: 'home', component: MapComponent },
+    { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  ];
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, FusionChartsModule],
+  declarations: [AppComponent, MapComponent],
+  imports: [
+    BrowserModule, 
+    FusionChartsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }
+    )
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

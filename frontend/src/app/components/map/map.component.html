@@ -1,0 +1,9 @@
+<button (click)="back()">Back</button>
+<fusioncharts
+ type={{this.type}}
+ width={{this.width}}
+ height={{this.height}}
+ dataFormat={{this.dataFormat}}
+ [dataSource]="this.data"
+ (entityClick)="update($event)"
+></fusioncharts>

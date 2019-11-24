@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Belgium",
+        "chart_name": "belgium"
+    },
+    {
+        "name": "Luxembourg",
+        "chart_name": "luxembourg"
+    },
+    {
+        "name": "Namur",
+        "chart_name": "namur"
+    },
+    {
+        "name": "Hainaut",
+        "chart_name": "hainaut"
+    },
+    {
+        "name": "Liege",
+        "chart_name": "liege"
+    },
+    {
+        "name": "Brabant Wallon",
+        "chart_name": "walloonbrabant"
+    },
+    {
+        "name": "Limburg",
+        "chart_name": "limburgbgomeenten"
+    },
+    {
+        "name": "Vlaams-Brabant",
+        "chart_name": "flemishbrabant"
+    },
+    {
+        "name": "Brussels",
+        "chart_name": "brussels"
+    },
+    {
+        "name": "Oost-Vlaanderen",
+        "chart_name": "eastflanders"
+    },
+    {
+        "name": "West-Vlaanderen",
+        "chart_name": "westflanders"
+    },
+    {
+        "name": "Antwerpen",
+        "chart_name": "antwerp"
+    }
+]

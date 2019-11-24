@@ -28,7 +28,6 @@ export class AppComponent {
       //label refers to country name
       this.type = this.mapService.getMapByName($event.dataObj.label);
       console.log($event)
-      console.log(this.type);
     })
   };
 

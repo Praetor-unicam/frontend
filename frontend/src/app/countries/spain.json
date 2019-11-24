@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Spain",
+        "chart_name": "spain"
+    },
+    {
+        "name": "Balearic Islands",
+        "chart_name": "balearicislands"
+    },
+    {
+        "name": "Canary Islands",
+        "chart_name": "canaryislands"
+    },
+    {
+        "name": "Region of Murcia",
+        "chart_name": "regionofmurcia"
+    },
+    {
+        "name": "Andalusia",
+        "chart_name": "andalusia"
+    },
+    {
+        "name": "Valencian Community",
+        "chart_name": "valenciancommunity"
+    },
+    {
+        "name": "Castilla-La Mancha",
+        "chart_name": "castillalamancha"
+    },
+    {
+        "name": "Extremadura",
+        "chart_name": "extremadura"
+    },
+    {
+        "name": "Community of Madrid",
+        "chart_name": "communityofmadrid"
+    },
+    {
+        "name": "Catalonia",
+        "chart_name": "catalonia"
+    },
+    {
+        "name": "Aragon",
+        "chart_name": "aragon"
+    },
+    {
+        "name": "Castile and León",
+        "chart_name": "castileandleon"
+    },
+    {
+        "name": "Navarre",
+        "chart_name": "navarre"
+    },
+    {
+        "name": "La Rioja",
+        "chart_name": "larioja"
+    },
+    {
+        "name": "Basque Country",
+        "chart_name": "basquecountry"
+    },
+    {
+        "name": "Cantabria",
+        "chart_name": "cantabria"
+    },
+    {
+        "name": "Asturias",
+        "chart_name": "asturias"
+    },
+    {
+        "name": "Galicia",
+        "chart_name": "galicia"
+    }
+]

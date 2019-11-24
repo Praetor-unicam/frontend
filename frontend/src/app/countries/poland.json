@@ -1,0 +1,70 @@
+[
+    {
+        "name": "Poland",
+        "chart_name": "poland"
+    },
+    {
+        "name": "Podkarpackie",
+        "chart_name": "podkarpackie"
+    },
+    {
+        "name": "Małopolskie",
+        "chart_name": "malopolskie"
+    },
+    {
+        "name": "Śląskie",
+        "chart_name": "slaskie"
+    },
+    {
+        "name": "Opolskie",
+        "chart_name": "opolskie"
+    },
+    {
+        "name": "Dolnośląskie",
+        "chart_name": "dolnoslaskie"
+    },
+    {
+        "name": "Lubelskie",
+        "chart_name": "lubelskie"
+    },
+    {
+        "name": "Świętokrzyskie",
+        "chart_name": "swietokrzyskie"
+    },
+    {
+        "name": "Mazowieckie",
+        "chart_name": "mazowieckie"
+    },
+    {
+        "name": "?ódzkie",
+        "chart_name": "lodzkie"
+    },
+    {
+        "name": "Wielkopolskie",
+        "chart_name": "wielkopolskie"
+    },
+    {
+        "name": "Lubuskie",
+        "chart_name": "lubuskie"
+    },
+    {
+        "name": "Kujawsko-Pomorskie",
+        "chart_name": "kujawskopomorskie"
+    },
+    {
+        "name": "Podlaskie",
+        "chart_name": "podlaskie"
+    },
+    {
+        "name": "Warmińsko-Mazurskie",
+        "chart_name": "warminskomazurskie"
+    },
+    {
+        "name": "Pomorskie",
+        "chart_name": "pomorskie"
+    },
+    {
+        "name": "Zachodniopomorskie",
+        "chart_name": "zachodniopomorskie"
+    }
+]

@@ -14,7 +14,10 @@ export class MapService {
       legendposition: "BOTTOM",
       entitytooltext: "$lname",
       entityfillhovercolor: "#FFCDD2",
-      theme: "fusion"
+      nullentitycolor: "#ff0000",
+      theme: "fusion",
+      borderColor: "#000000",
+      
     },
     colorrange: {
       gradient: "0",
@@ -41,7 +44,6 @@ export class MapService {
   }
 
   public getMapByName(name: string): string{
-    console.log(dictionary)
     return dictionary[name];
   }
 }

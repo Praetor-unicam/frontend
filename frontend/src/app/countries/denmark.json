@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Denmark",
+    "chart_name": "denmark"
+  },
+  {
+    "name": "Bornholm",
+    "chart_name": ""
+  },
+  {
+    "name": "Frederiksberg",
+    "chart_name": ""
+  },
+  {
+    "name": "Frederiksborg",
+    "chart_name": ""
+  },
+  {
+    "name": "Fyn",
+    "chart_name": "fayoum"
+  },
+  {
+    "name": "København",
+    "chart_name": ""
+  },
+  {
+    "name": "Københavnsamt",
+    "chart_name": ""
+  },
+  {
+    "name": "Nordjylland",
+    "chart_name": "nordjylland"
+  },
+  {
+    "name": "Ringkjøbing",
+    "chart_name": ""
+  },
+  {
+    "name": "Roskilde",
+    "chart_name": ""
+  },
+  {
+    "name": "Storstrøm",
+    "chart_name": ""
+  },
+  {
+    "name": "Sønderjylland",
+    "chart_name": ""
+  },
+  {
+    "name": "Vestsjælland",
+    "chart_name": ""
+  },
+  {
+    "name": "Viborg",
+    "chart_name": ""
+  },
+  {
+    "name": "Århus",
+    "chart_name": "akershus"
+  },
+  {
+    "name": "Ribe",
+    "chart_name": ""
+  },
+  {
+    "name": "Vejle",
+    "chart_name": ""
+  }
+]

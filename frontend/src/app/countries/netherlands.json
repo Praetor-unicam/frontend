@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Netherlands",
+    "chart_name": "netherlands"
+  },
+  {
+    "name": "Drenthe",
+    "chart_name": ""
+  },
+  {
+    "name": "Flevoland",
+    "chart_name": ""
+  },
+  {
+    "name": "Friesland",
+    "chart_name": ""
+  },
+  {
+    "name": "Gelderland",
+    "chart_name": ""
+  },
+  {
+    "name": "Groningen",
+    "chart_name": ""
+  },
+  {
+    "name": "Limburg",
+    "chart_name": "limburgbgomeenten"
+  },
+  {
+    "name": "Noordbrabant",
+    "chart_name": ""
+  },
+  {
+    "name": "Overijssel",
+    "chart_name": ""
+  },
+  {
+    "name": "Utrecht",
+    "chart_name": ""
+  },
+  {
+    "name": "Zeeland",
+    "chart_name": ""
+  },
+  {
+    "name": "Zuidholland",
+    "chart_name": ""
+  },
+  {
+    "name": "Noordholland",
+    "chart_name": ""
+  }
+]

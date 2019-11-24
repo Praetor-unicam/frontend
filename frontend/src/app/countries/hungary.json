@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Hungary",
+    "chart_name": "hungary"
+  },
+  {
+    "name": "Baranya",
+    "chart_name": ""
+  },
+  {
+    "name": "Borsodabaujzemplen",
+    "chart_name": ""
+  },
+  {
+    "name": "Budapest",
+    "chart_name": ""
+  },
+  {
+    "name": "Bacskiskun",
+    "chart_name": ""
+  },
+  {
+    "name": "Bekes",
+    "chart_name": ""
+  },
+  {
+    "name": "Csongrad",
+    "chart_name": ""
+  },
+  {
+    "name": "Fejer",
+    "chart_name": ""
+  },
+  {
+    "name": "Gyormosonsopron",
+    "chart_name": ""
+  },
+  {
+    "name": "Hajdubihar",
+    "chart_name": ""
+  },
+  {
+    "name": "Heves",
+    "chart_name": ""
+  },
+  {
+    "name": "Jasznagykunszolnok",
+    "chart_name": ""
+  },
+  {
+    "name": "Komaromesztergom",
+    "chart_name": ""
+  },
+  {
+    "name": "Nograd",
+    "chart_name": ""
+  },
+  {
+    "name": "Pest",
+    "chart_name": ""
+  },
+  {
+    "name": "Somogy",
+    "chart_name": ""
+  },
+  {
+    "name": "Szabolcsszatmarbereg",
+    "chart_name": ""
+  },
+  {
+    "name": "Tolna",
+    "chart_name": ""
+  },
+  {
+    "name": "Vas",
+    "chart_name": ""
+  },
+  {
+    "name": "Veszprém",
+    "chart_name": ""
+  },
+  {
+    "name": "Zala",
+    "chart_name": ""
+  }
+]

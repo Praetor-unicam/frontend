@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Czechrepublic",
+    "chart_name": "czechrepublic"
+  },
+  {
+    "name": "Jihoeský",
+    "chart_name": ""
+  },
+  {
+    "name": "Jihomoravský",
+    "chart_name": ""
+  },
+  {
+    "name": "Karlovarský",
+    "chart_name": ""
+  },
+  {
+    "name": "Královéhradecký",
+    "chart_name": "hradeckralove"
+  },
+  {
+    "name": "Liberecký",
+    "chart_name": "liberec"
+  },
+  {
+    "name": "Moravskoslezský",
+    "chart_name": "moraviasilesia"
+  },
+  {
+    "name": "Olomoucký",
+    "chart_name": "olomoucregion"
+  },
+  {
+    "name": "Pardubický",
+    "chart_name": "pardubiceregion"
+  },
+  {
+    "name": "Plzeňský",
+    "chart_name": "plzenregion"
+  },
+  {
+    "name": "Praha",
+    "chart_name": "prague"
+  },
+  {
+    "name": "Středoeský",
+    "chart_name": ""
+  },
+  {
+    "name": "Vysoina",
+    "chart_name": "vysocina"
+  },
+  {
+    "name": "Zlínský",
+    "chart_name": "zlin"
+  },
+  {
+    "name": "Ústecký",
+    "chart_name": ""
+  }
+]

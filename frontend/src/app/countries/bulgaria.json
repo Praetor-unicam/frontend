@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Bulgaria",
+    "chart_name": "bulgaria"
+  },
+  {
+    "name": "Blagoevgrad",
+    "chart_name": "blagoevgrad"
+  },
+  {
+    "name": "Burgas",
+    "chart_name": "burgas"
+  },
+  {
+    "name": "Dobrich",
+    "chart_name": "dobrich"
+  },
+  {
+    "name": "Gabrovo",
+    "chart_name": "gabrovo"
+  },
+  {
+    "name": "Gradsofiya",
+    "chart_name": "gradsofiya"
+  },
+  {
+    "name": "Haskovo",
+    "chart_name": "haskovo"
+  },
+  {
+    "name": "Kurdzhali",
+    "chart_name": "kurdzhali"
+  },
+  {
+    "name": "Kyustendil",
+    "chart_name": "kyustendil"
+  },
+  {
+    "name": "Lovech",
+    "chart_name": "lovech"
+  },
+  {
+    "name": "Montana",
+    "chart_name": "montana"
+  },
+  {
+    "name": "Pernik",
+    "chart_name": "pernik"
+  },
+  {
+    "name": "Pazardzhik",
+    "chart_name": "pazardzhik"
+  },
+  {
+    "name": "Pleven",
+    "chart_name": "pleven"
+  },
+  {
+    "name": "Plovdiv",
+    "chart_name": "plovdiv"
+  },
+  {
+    "name": "Razgrad",
+    "chart_name": "razgrad"
+  },
+  {
+    "name": "Ruse",
+    "chart_name": "ruse"
+  },
+  {
+    "name": "Shumen",
+    "chart_name": "shumen"
+  },
+  {
+    "name": "Silistra",
+    "chart_name": "silistra"
+  },
+  {
+    "name": "Sliven",
+    "chart_name": "sliven"
+  },
+  {
+    "name": "Smolyan",
+    "chart_name": "smolyan"
+  },
+  {
+    "name": "Sofiya",
+    "chart_name": "sofiya"
+  },
+  {
+    "name": "Turgovishte",
+    "chart_name": "turgovishte"
+  },
+  {
+    "name": "Varna",
+    "chart_name": "varna"
+  },
+  {
+    "name": "Velikoturnovo",
+    "chart_name": "velikoturnovo"
+  },
+  {
+    "name": "Vratsa",
+    "chart_name": "vratsa"
+  },
+  {
+    "name": "Yambol",
+    "chart_name": "yambol"
+  }
+]

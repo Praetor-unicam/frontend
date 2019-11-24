@@ -291,6 +291,8 @@ import * as Cantabria from "fusionmaps/maps/fusioncharts.cantabria";
 import * as Asturias from "fusionmaps/maps/fusioncharts.asturias";
 import * as Galicia from "fusionmaps/maps/fusioncharts.galicia";
 import { MapComponent } from './components/map/map.component';
+import { UploadComponent } from './components/upload/upload.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
@@ -456,10 +458,11 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   const appRoutes: Routes = [
     { path: 'home', component: MapComponent },
     { path: '',   redirectTo: '/home', pathMatch: 'full' },
+    { path: 'upload', component: UploadComponent }
   ];
 
 @NgModule({
-  declarations: [AppComponent, MapComponent],
+  declarations: [AppComponent, MapComponent, UploadComponent, NavbarComponent],
   imports: [
     BrowserModule, 
     FusionChartsModule,

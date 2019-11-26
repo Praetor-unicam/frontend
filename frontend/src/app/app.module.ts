@@ -468,7 +468,7 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
     FusionChartsModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      { enableTracing: false }
     )
   ],
   providers: [],

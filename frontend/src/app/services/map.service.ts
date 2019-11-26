@@ -6,11 +6,8 @@ import dictionary from './../models/CountriesInfo';
 })
 export class MapService {
 
-
-
   data = {
     chart: {
-      caption: "Europe",
       legendposition: "BOTTOM",
       entitytooltext: "$lname",
       entityfillhovercolor: "#FFCDD2",
@@ -25,12 +22,11 @@ export class MapService {
         {
           maxvalue: "0",
           displayvalue: "No Data available",
-          code: "#000000"
+          code: "#ffffff"
         },
         {
           maxvalue: "1",
           displayvalue: "Data available",
-          
           code: "#EF9A9A"
         }
       ]

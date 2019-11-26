@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, HostListener } from '@angular/core';
 import { MapService } from './../../services/map.service';
 
 
@@ -11,7 +11,7 @@ export class MapComponent implements OnInit {
 
   public data: any;
   public width: number = 1200;
-  public height: number = 800;
+  public height: number;
   public type: string = "europe";
   public dataFormat: string = "json";
   public dataSource: string = this.data;
@@ -22,6 +22,14 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight - 100;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight - 100;
   }
 
   public update($event: any) {
@@ -30,8 +38,18 @@ export class MapComponent implements OnInit {
     //have to add zone, otherwise view will not be updated
     this.zone.run(() => {
       //label refers to country name
-      this.type = this.mapService.getMapByName($event.dataObj.label);
-      console.log($event)
+      let new_map = this.mapService.getMapByName($event.dataObj.label);
+      if(new_map != null){
+        this.type = new_map;
+      }
+      else{
+        if(this.type == 'europe'){
+          alert("The map for this region is not available");
+        }
+        else{
+          alert("Selecting region...");
+        }
+      }
     })
   };
 

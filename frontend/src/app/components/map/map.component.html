@@ -1,7 +1,7 @@
 <button (click)="back()" class="btn btn-danger">Back</button>
-<button class="btn btn-info" *ngIf = 'this.type != "europe"'>Select region</button>
+<button class="btn btn-info" *ngIf = 'this.current_map_name != "europe"' (click) = 'select(this.current_label)'>Select region</button>
 <fusioncharts
- type={{this.type}}
+ type={{this.current_map_name}}
  width={{this.width}}
  height={{this.height}}
  dataFormat={{this.dataFormat}}

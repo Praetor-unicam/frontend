@@ -12,7 +12,8 @@ export class MapComponent implements OnInit {
   public data: any;
   public width: number = 1200;
   public height: number;
-  public type: string = "europe";
+  public current_map_name: string = "europe";
+  public current_label: string = "Europe"
   public dataFormat: string = "json";
   public dataSource: string = this.data;
   public previousCountries: string[] = [];
@@ -34,20 +35,21 @@ export class MapComponent implements OnInit {
 
   public update($event: any) {
     //push current country in previousCountries list
-    this.previousCountries.push(this.type);
+    this.previousCountries.push(this.current_map_name);
     //have to add zone, otherwise view will not be updated
     this.zone.run(() => {
       //label refers to country name
-      let new_map = this.mapService.getMapByName($event.dataObj.label);
+      this.current_label = $event.dataObj.label;
+      let new_map = this.mapService.getMapByName(this.current_label);
       if(new_map != null){
-        this.type = new_map;
+        this.current_map_name = new_map;
       }
       else{
-        if(this.type == 'europe'){
+        if(this.current_map_name == 'europe'){
           alert("The map for this region is not available");
         }
         else{
-          alert("Selecting region...");
+          this.select(this.current_label);
         }
       }
     })
@@ -57,7 +59,11 @@ export class MapComponent implements OnInit {
     //pop country from previousContries list and change current country
     if(this.previousCountries.length != 0){
       let country = this.previousCountries.pop();
-      this.type = country;
+      this.current_map_name = country;
     }
+  }
+
+  public select(region: string){
+    alert("Selecting region " + region);
   }
 }

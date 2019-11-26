@@ -1,5 +1,7 @@
 import { Component, OnInit, NgZone, HostListener } from '@angular/core';
 import { MapService } from './../../services/map.service';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -18,7 +20,7 @@ export class MapComponent implements OnInit {
   public dataSource: string = this.data;
   public previousCountries: string[] = [];
 
-  constructor(private zone: NgZone, private mapService: MapService){
+  constructor(private zone: NgZone, private mapService: MapService, private router: Router, private dataService: DataService){
     this.data = this.mapService.getMap();
   }
 
@@ -65,5 +67,7 @@ export class MapComponent implements OnInit {
 
   public select(region: string){
     alert("Selecting region " + region);
+    this.dataService.selectRegion(region);
+    this.router.navigate(['/dataview']);
   }
 }

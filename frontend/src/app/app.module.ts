@@ -293,6 +293,7 @@ import * as Galicia from "fusionmaps/maps/fusioncharts.galicia";
 import { MapComponent } from './components/map/map.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { DataviewComponent } from './components/dataview/dataview.component';
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
@@ -458,11 +459,12 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   const appRoutes: Routes = [
     { path: 'home', component: MapComponent },
     { path: '',   redirectTo: '/home', pathMatch: 'full' },
-    { path: 'upload', component: UploadComponent }
+    { path: 'upload', component: UploadComponent },
+    { path: 'dataview', component: DataviewComponent }
   ];
 
 @NgModule({
-  declarations: [AppComponent, MapComponent, UploadComponent, NavbarComponent],
+  declarations: [AppComponent, MapComponent, UploadComponent, NavbarComponent, DataviewComponent],
   imports: [
     BrowserModule, 
     FusionChartsModule,

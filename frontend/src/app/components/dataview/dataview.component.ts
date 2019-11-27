@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ChartService } from 'src/app/services/chart.service';
+import { Crime } from 'src/app/models/Crime';
+import { HistogramData } from 'src/app/models/HistogramData';
 
 @Component({
   selector: 'app-dataview',
@@ -33,8 +35,12 @@ export class DataviewComponent implements OnInit {
 
   public load(){
     if(this.selectedYear != null){
-      let data = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
-      this.dataSource = this.chartService.buildHistogram(this.dataService.selectedRegion, this.selectedYear, data);
+      let data: Crime[] = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
+      let histoData: HistogramData[] = [];
+      data.forEach((crime: Crime) => {
+        histoData.push(new HistogramData(crime.name, crime.n_crimes));
+      })
+      this.dataSource = this.chartService.buildHistogram(this.dataService.selectedRegion, this.selectedYear, histoData);
       console.log(this.dataSource)
     }
     else{

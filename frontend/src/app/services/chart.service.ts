@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import dictionary from '../models/CountriesInfo';
+import { HistogramData } from '../models/HistogramData';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,7 @@ export class ChartService {
     return dictionary[name];
   }
 
-  public buildHistogram(country: string, year: number, data: any){
+  public buildHistogram(country: string, year: number, data: HistogramData[]){
     let d = {
       chart: {
         caption: country + ' in ' + year,

@@ -42,4 +42,18 @@ export class MapService {
   public getMapByName(name: string): string{
     return dictionary[name];
   }
+
+  public buildHistogram(country: string, year: number, data: any){
+
+    let d = {
+      chart: {
+        caption: country + ' in ' + year,
+        xaxisname: "Crime",
+        yaxisname: "Number",
+        theme: "fusion"
+      },
+      data: data
+    };
+    return d;
+  }
 }

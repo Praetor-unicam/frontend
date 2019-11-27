@@ -1,6 +1,17 @@
 <div class="form-group">
   <label for="sel1">Select the year to display:</label>
-  <select class="form-control" id="sel1">
+  <select [(ngModel)]="selectedYear" class="form-control" id="sel1">
     <option *ngFor='let year of years'>{{year}}</option>
   </select>
 </div> 
+<button class="btn btn-info" (click)="load()">Load Data</button>
+
+<fusioncharts
+  *ngIf = 'dataSource != null'
+  [width]="width"
+  [height]="height"
+  [type]="type"
+  [dataFormat]="dataFormat"
+  [dataSource]="dataSource"
+>
+</fusioncharts>

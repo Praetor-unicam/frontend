@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { FusionChartsModule } from 'angular-fusioncharts';
 import * as FusionCharts from 'fusioncharts';
 import * as FusionMaps from 'fusioncharts/fusioncharts.maps';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as Maps from 'fusioncharts/fusioncharts.maps';
 import * as World from 'fusioncharts/maps/fusioncharts.world';
 
@@ -454,6 +457,7 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   Vorarlberg,
   Wien,
   World,
+  Charts,
   FusionTheme);
 
   const appRoutes: Routes = [
@@ -471,7 +475,8 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false }
-    )
+    ),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

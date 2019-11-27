@@ -25,7 +25,11 @@ export class DataviewComponent implements OnInit {
   constructor(private dataService: DataService, private chartService: ChartService) { }
 
   ngOnInit() {
-    this.years = this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion);
+    this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion)
+      .subscribe((years: number[]) => {
+        this.years = years;
+      })
+    //this.years = this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion);
     this.width = window.innerWidth;
     this.height = window.innerHeight - 100;
   }

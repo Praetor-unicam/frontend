@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { CountryData } from '../models/CountryData';
 import { YearData } from '../models/YearData';
 import { Crime } from '../models/Crime';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 const data: CountryData = {
   country: 'Luxembourg',
@@ -52,7 +54,7 @@ export class DataService {
 
   public selectedRegion: string;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   public getAvailableYearsFromCountry(country: string): number[]{
     return years;
@@ -61,7 +63,7 @@ export class DataService {
   public selectRegion(region: string){
     this.selectedRegion = region;
   }
-
+  /*
   public getData(country: string, year: number): Crime[]{
     let crimes: Crime[] = null;
     data.year_data.forEach((yearData: YearData) => {
@@ -70,5 +72,10 @@ export class DataService {
       }
     })
     return crimes;
+  }
+  */
+
+  public getData(country: string, year: number): Observable<Crime[]>{
+    return this.http.get<Crime[]>('api/data/' + country + '/' + year);
   }
 }

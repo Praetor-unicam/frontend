@@ -38,14 +38,21 @@ export class DataviewComponent implements OnInit {
 
   public load(){
     if(this.selectedYear != null){
+      /*
       let data: Crime[] = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
-      let histoData: HistogramData[] = [];
-      data.forEach((crime: Crime) => {
-        histoData.push(new HistogramData(crime.name, crime.n_crimes));
-      })
-      this.changeType();
-      this.dataSource = this.chartService.buildHistogram(this.dataService.selectedRegion, this.selectedYear, histoData);
-      console.log(this.dataSource)
+      */
+      let data: Crime[];
+      this.dataService.getData(this.dataService.selectedRegion, this.selectedYear)
+        .subscribe((crimes: Crime[]) => {
+          data = crimes;
+          let histoData: HistogramData[] = [];
+          data.forEach((crime: Crime) => {
+            histoData.push(new HistogramData(crime.name, crime.n_crimes));
+          })
+          this.changeType();
+          this.dataSource = this.chartService.buildHistogram(this.dataService.selectedRegion, this.selectedYear, histoData);
+        })
+      
     }
     else{
       alert("You must choose a year.");

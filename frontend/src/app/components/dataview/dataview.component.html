@@ -4,6 +4,12 @@
     <option *ngFor='let year of years'>{{year}}</option>
   </select>
 </div> 
+<div class="form-group">
+  <label for="sel2">Select the type of chart to display:</label>
+  <select [(ngModel)]="selectedChart" class="form-control" id="sel1">
+    <option *ngFor='let chart of charts'>{{chart}}</option>
+  </select>
+</div> 
 <button class="btn btn-info" (click)="load()">Load Data</button>
 
 <fusioncharts

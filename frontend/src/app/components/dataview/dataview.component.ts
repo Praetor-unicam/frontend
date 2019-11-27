@@ -4,6 +4,7 @@ import { ChartService } from 'src/app/services/chart.service';
 import { Crime } from 'src/app/models/Crime';
 import { HistogramData } from 'src/app/models/HistogramData';
 
+
 @Component({
   selector: 'app-dataview',
   templateUrl: './dataview.component.html',
@@ -12,7 +13,9 @@ import { HistogramData } from 'src/app/models/HistogramData';
 export class DataviewComponent implements OnInit {
 
   public years: number[] = [];
+  public charts: string[] = ['Histogram', 'Pie Chart'];
   public selectedYear: number = null;
+  public selectedChart: string;
   public width: number;
   public height: number;
   public dataSource: any = null;
@@ -40,11 +43,22 @@ export class DataviewComponent implements OnInit {
       data.forEach((crime: Crime) => {
         histoData.push(new HistogramData(crime.name, crime.n_crimes));
       })
+      this.changeType();
       this.dataSource = this.chartService.buildHistogram(this.dataService.selectedRegion, this.selectedYear, histoData);
       console.log(this.dataSource)
     }
     else{
       alert("You must choose a year.");
     }
+  }
+
+  public changeType(){
+    if(this.selectedChart == 'Histogram'){
+      this.type = 'column2d';
+    }
+    if(this.selectedChart == 'Pie Chart'){
+      this.type = 'pie3d';
+    }
+    console.log(this.type)
   }
 }

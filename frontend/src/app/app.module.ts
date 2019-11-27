@@ -456,6 +456,7 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   Tirol,
   Vorarlberg,
   Wien,
+  
   World,
   Charts,
   FusionTheme);

@@ -1,5 +1,5 @@
 import { Component, OnInit, NgZone, HostListener } from '@angular/core';
-import { MapService } from './../../services/map.service';
+import { ChartService } from '../../services/chart.service';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
@@ -20,8 +20,8 @@ export class MapComponent implements OnInit {
   public dataSource: string = this.data;
   public previousCountries: string[] = [];
 
-  constructor(private zone: NgZone, private mapService: MapService, private router: Router, private dataService: DataService){
-    this.data = this.mapService.getMap();
+  constructor(private zone: NgZone, private chartService: ChartService, private router: Router, private dataService: DataService){
+    this.data = this.chartService.getMap();
   }
 
   ngOnInit() {
@@ -42,7 +42,7 @@ export class MapComponent implements OnInit {
     this.zone.run(() => {
       //label refers to country name
       this.current_label = $event.dataObj.label;
-      let new_map = this.mapService.getMapByName(this.current_label);
+      let new_map = this.chartService.getMapByName(this.current_label);
       if(new_map != null){
         this.current_map_name = new_map;
       }

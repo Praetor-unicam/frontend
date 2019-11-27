@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { MapService } from './services/map.service';
+import { ChartService } from './services/chart.service';
 
 @Component({
   selector: 'app-root',

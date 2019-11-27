@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import dictionary from './../models/CountriesInfo';
+import dictionary from '../models/CountriesInfo';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MapService {
+export class ChartService {
 
   data = {
     chart: {
@@ -44,7 +44,6 @@ export class MapService {
   }
 
   public buildHistogram(country: string, year: number, data: any){
-
     let d = {
       chart: {
         caption: country + ' in ' + year,

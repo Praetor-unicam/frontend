@@ -1,23 +1,36 @@
-<div class="form-group">
-  <label for="sel1">Select the year to display:</label>
-  <select [(ngModel)]="selectedYear" class="form-control" id="sel1">
-    <option *ngFor='let year of years'>{{year}}</option>
-  </select>
-</div> 
-<div class="form-group">
-  <label for="sel2">Select the type of chart to display:</label>
-  <select [(ngModel)]="selectedChart" class="form-control" id="sel1">
-    <option *ngFor='let chart of charts'>{{chart}}</option>
-  </select>
-</div> 
-<button class="btn btn-info" (click)="load()">Load Data</button>
+<body style="height: 100%;">
 
-<fusioncharts
-  *ngIf = 'dataSource != null'
-  [width]="width"
-  [height]="height"
-  [type]="type"
-  [dataFormat]="dataFormat"
-  [dataSource]="dataSource"
->
-</fusioncharts>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="form-group">
+      <select [(ngModel)]="selectedYear" class="form-control" id="sel1">
+        <option [ngValue]="undefined" disabled  selected> Select the year to display </option>
+        <option *ngFor='let year of years'>{{year}}</option>
+      </select>
+    </div> 
+  </div>
+  <div class="col-sm-4">
+    <div class="form-group">
+    <select [(ngModel)]="selectedChart" class="form-control" id="sel2">
+      <option [ngValue]="undefined" disabled  selected> Select the type of chart to display </option>
+      <option *ngFor='let chart of charts'>{{chart}}</option>
+    </select>
+  </div> 
+  </div>
+  <div class="col-sm-2">
+      <button class="btn btn-info" (click)="load()">Load Data</button>
+  </div>
+</div>
+
+<div>
+  <fusioncharts
+    *ngIf = 'dataSource != null'
+    width="100%"
+    height="100%"
+    [type]="type"
+    [dataFormat]="dataFormat"
+    [dataSource]="dataSource"
+  >
+  </fusioncharts>
+</div>
+</body>

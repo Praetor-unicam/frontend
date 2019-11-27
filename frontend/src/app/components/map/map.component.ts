@@ -43,11 +43,11 @@ export class MapComponent implements OnInit {
       //label refers to country name
       this.current_label = $event.dataObj.label;
       let new_map = this.chartService.getMapByName(this.current_label);
-      if(new_map != null){
+      if(new_map != null && new_map != ""){
         this.current_map_name = new_map;
       }
       else{
-        if(this.current_map_name == 'europe'){
+        if(this.current_map_name == 'europe' || new_map === ""){
           alert("The map for this region is not available");
         }
         else{

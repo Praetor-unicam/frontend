@@ -56,11 +56,11 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  /*
+  
   public getAvailableYearsFromCountry(country: string): number[]{
     return years;
   }
-  */
+  
 
   public selectRegion(region: string){
     this.selectedRegion = region;
@@ -81,7 +81,9 @@ export class DataService {
     return this.http.get<Crime[]>('api/data/' + country + '/' + year);
   }
 
+  /*
   public getAvailableYearsFromCountry(country: string): Observable<number[]>{
     return this.http.get<number[]>('api/years/' + country);
   }
+  */
 }

@@ -25,11 +25,13 @@ export class DataviewComponent implements OnInit {
   constructor(private dataService: DataService, private chartService: ChartService) { }
 
   ngOnInit() {
+    /*
     this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion)
       .subscribe((years: number[]) => {
         this.years = years;
       })
-    //this.years = this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion);
+      */
+    this.years = this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion);
     this.width = window.innerWidth;
     this.height = window.innerHeight - 100;
   }
@@ -70,6 +72,5 @@ export class DataviewComponent implements OnInit {
     if(this.selectedChart == 'Pie Chart'){
       this.type = 'pie3d';
     }
-    console.log(this.type)
   }
 }

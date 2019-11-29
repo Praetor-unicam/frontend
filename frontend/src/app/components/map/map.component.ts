@@ -12,10 +12,11 @@ import { DataService } from 'src/app/services/data.service';
 export class MapComponent implements OnInit {
 
   public data: any;
-  public width: number = 1200;
+  public width: number;
   public height: number;
   public current_map_name: string = "europe";
-  public current_label: string = "Europe"
+  public current_label: string = "Europe";
+  public map_path: string[] = [];
   public dataFormat: string = "json";
   public dataSource: string = this.data;
   public previousCountries: string[] = [];
@@ -42,16 +43,21 @@ export class MapComponent implements OnInit {
     this.zone.run(() => {
       //label refers to country name
       this.current_label = $event.dataObj.label;
+      //get new map 
       let new_map = this.chartService.getMapByName(this.current_label);
+      //add country label to map_path in order to send it via API call
+      this.map_path.push(this.current_label);
+
       if(new_map != null && new_map != ""){
         this.current_map_name = new_map;
       }
       else{
         if(this.current_map_name == 'europe' || new_map === ""){
           alert("The map for this region is not available");
+          this.map_path.pop();
         }
         else{
-          this.select(this.current_label);
+          this.select();
         }
       }
     })
@@ -61,13 +67,15 @@ export class MapComponent implements OnInit {
     //pop country from previousContries list and change current country
     if(this.previousCountries.length != 0){
       let country = this.previousCountries.pop();
+      this.map_path.pop();
       this.current_map_name = country;
     }
   }
 
-  public select(region: string){
-    alert("Selecting region " + region);
-    this.dataService.selectRegion(region);
+  public select(){
+    console.log(this.map_path);
+    alert("Selecting region " + this.map_path);
+    this.dataService.selectRegion(this.map_path);
     this.router.navigate(['/dataview']);
   }
 }

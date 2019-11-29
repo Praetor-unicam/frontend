@@ -45,25 +45,25 @@ const data: CountryData = {
   ]
 }
 
-const years: number[] = [2017, 2018];
+const years: number[] = [2000, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018];
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  public selectedRegion: string;
+  public selectedPath: string[];
 
   constructor(private http: HttpClient) { }
 
   
-  public getAvailableYearsFromCountry(country: string): number[]{
+  public getAvailableYearsFromCountry(country_path: string[]): number[]{
     return years;
   }
   
 
-  public selectRegion(region: string){
-    this.selectedRegion = region;
+  public selectRegion(map_path: string[]){
+    this.selectedPath = map_path;
   }
   /*
   public getData(country: string, year: number): Crime[]{
@@ -77,8 +77,27 @@ export class DataService {
   }
   */
 
-  public getData(country: string, year: number): Observable<Crime[]>{
-    return this.http.get<Crime[]>('api/data/' + country + '/' + year);
+  public getData(country_path: string[], year: number): Observable<Crime[]>{
+    //check if country_path array is in the right format
+    if(country_path[0] == null || country_path.length != 3){
+      alert("Something went wrong during loading of data. Are you sure you specified everything?");
+      return null;
+    }
+    else{
+      //create url string
+      let last_country: string = country_path[0];
+      let url_string: string = country_path[0] + '/' + year;
+      for(let i = 1; i < country_path.length; i++){
+        if(country_path[i] != null){
+          url_string = url_string + '/' + country_path[i];
+          last_country = country_path[i];
+        }
+        else{
+          url_string = url_string + '/' + last_country;
+        }
+      };
+      return this.http.get<Crime[]>('api/data/' + url_string);
+    }
   }
 
   /*

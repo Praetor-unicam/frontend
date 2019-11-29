@@ -31,7 +31,7 @@ export class DataviewComponent implements OnInit {
         this.years = years;
       })
       */
-    this.years = this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion);
+    this.years = this.dataService.getAvailableYearsFromCountry(this.dataService.selectedPath);
     this.width = window.innerWidth;
     this.height = window.innerHeight - 100;
   }
@@ -48,7 +48,7 @@ export class DataviewComponent implements OnInit {
       let data: Crime[] = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
       */
       let data: Crime[];
-      this.dataService.getData(this.dataService.selectedRegion, this.selectedYear)
+      this.dataService.getData(this.dataService.selectedPath, this.selectedYear)
         .subscribe((crimes: Crime[]) => {
           data = crimes;
           let histoData: HistogramData[] = [];
@@ -56,7 +56,7 @@ export class DataviewComponent implements OnInit {
             histoData.push(new HistogramData(crime.name, crime.n_crimes));
           })
           this.changeType();
-          this.dataSource = this.chartService.buildHistogram(this.dataService.selectedRegion, this.selectedYear, histoData);
+          this.dataSource = this.chartService.buildHistogram(this.dataService.selectedPath[this.dataService.selectedPath.length - 1], this.selectedYear, histoData);
         })
       
     }

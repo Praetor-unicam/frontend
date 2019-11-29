@@ -1,6 +1,6 @@
 <div *ngIf = 'this.current_map_name != "europe"'>
     <button (click)="back()" class="btn btn-danger">Back</button>
-    <button class="btn btn-info" (click) = 'select(this.current_label)'>Select region</button>
+    <button class="btn btn-info" (click) = 'select()'>Select region</button>
 </div>
 <fusioncharts
  type={{this.current_map_name}}

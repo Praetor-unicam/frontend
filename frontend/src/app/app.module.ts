@@ -183,12 +183,6 @@ import * as Yambol from 'fusionmaps/maps/fusioncharts.yambol';
 
 // CYPRUS
 import * as Cyprus from 'fusionmaps/maps/fusioncharts.cyprus';
-import * as Famagusta from 'fusionmaps/maps/fusioncharts.cyprus';
-import * as Kyrenia from 'fusionmaps/maps/fusioncharts.cyprus';
-import * as Larnaca from 'fusionmaps/maps/fusioncharts.cyprus';
-import * as Limassol from 'fusionmaps/maps/fusioncharts.cyprus';
-import * as Nicosia from 'fusionmaps/maps/fusioncharts.cyprus';
-import * as Paphos from 'fusionmaps/maps/fusioncharts.cyprus';
 
 // CZECH REPUBLIC
 import * as Czechrepublic from 'fusionmaps/maps/fusioncharts.czechrepublic';
@@ -391,12 +385,6 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   Yambol,
 
   Cyprus,
-  Famagusta,
-  Kyrenia,
-  Larnaca,
-  Limassol,
-  Nicosia,
-  Paphos,
 
   Czechrepublic,
   Jihoeský,

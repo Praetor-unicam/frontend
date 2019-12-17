@@ -12,15 +12,22 @@ export class UploadMappingComponent implements OnInit {
   constructor() { }
   
   fileEvent(fileInput: any) {
-    console.log("HEY")
     this.fileData = <File>fileInput.target.files[0];
   }
   
   onSubmit() {
     console.log(this.fileData);
-    let formData = new FormData();
-    formData.append('file', this.fileData);
-    console.log(formData);
+    if(this.fileData == null){
+      alert("You must first select a file.");
+    }
+    else if(this.fileData.type != 'text/plain'){
+      alert("File format not valid. You must enter a txt file.");
+    }
+    else{
+      let formData = new FormData();
+      formData.append('file', this.fileData);
+      console.log(formData);
+    }
   }
 
   ngOnInit() {

@@ -13,7 +13,7 @@
       <td>{{country.country}}</td>
       <td>{{country.endpoint_status}}</td>
       <td>{{country.mapping_status}}</td>
-      <td *ngIf='country.endpoint_status == "AVAILABLE"'><button class="btn btn-info">Upload</button></td>
+      <td *ngIf='country.endpoint_status == "AVAILABLE"'><button class="btn btn-info" (click)="uploadData(country.country)">Upload Data</button></td>
       <td  *ngIf='country.endpoint_status == "NOT_AVAILABLE"' ><button class="btn btn-info" disabled>Upload Data</button></td>
       <td *ngIf='country.mapping_status == "NOT_AVAILABLE"'><button class="btn btn-info">Upload Mapping</button></td>
       <td *ngIf='country.mapping_status == "AVAILABLE"'><button class="btn btn-success">Modify Mapping</button></td>

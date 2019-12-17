@@ -52,7 +52,6 @@ const years: number[] = [2000, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2
 })
 export class DataService {
 
-  public selectedPath: string[];
 
   constructor(private http: HttpClient) { }
 
@@ -61,10 +60,6 @@ export class DataService {
     return years;
   }
   
-
-  public selectRegion(map_path: string[]){
-    this.selectedPath = map_path;
-  }
   /*
   public getData(country: string, year: number): Crime[]{
     let crimes: Crime[] = null;
@@ -106,7 +101,4 @@ export class DataService {
   }
   */
 
-  public getAvailableCountries(): string[]{
-    return ['Luxembourg', '']
-  }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UploadService } from 'src/app/services/upload.service';
 import { Endpoint } from 'src/app/models/Endpoint';
 import { CountryStatus } from 'src/app/models/CountryStatus';
+import { SelectionService } from 'src/app/services/selection.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -12,10 +14,14 @@ export class UploadComponent implements OnInit {
 
   public countriesStatus: CountryStatus[];
 
-  constructor(private uploadSevice: UploadService) { }
+  constructor(private uploadSevice: UploadService, private selectionService: SelectionService, private router: Router) { }
 
   ngOnInit() {
     this.countriesStatus = this.uploadSevice.getCountriesStatus();
+  }
+
+  public uploadData(country: string){
+    alert("Uploading data from " + country + " endpoint");
   }
 
 }

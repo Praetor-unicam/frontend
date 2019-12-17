@@ -3,6 +3,7 @@ import { DataService } from 'src/app/services/data.service';
 import { ChartService } from 'src/app/services/chart.service';
 import { Crime } from 'src/app/models/Crime';
 import { HistogramData } from 'src/app/models/HistogramData';
+import { SelectionService } from 'src/app/services/selection.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class DataviewComponent implements OnInit {
   public dataFormar = "json";
   public type = "column2d";
 
-  constructor(private dataService: DataService, private chartService: ChartService) { }
+  constructor(private dataService: DataService, private chartService: ChartService, private selectionService: SelectionService) { }
 
   ngOnInit() {
     /*
@@ -31,7 +32,7 @@ export class DataviewComponent implements OnInit {
         this.years = years;
       })
       */
-    this.years = this.dataService.getAvailableYearsFromCountry(this.dataService.selectedPath);
+    this.years = this.dataService.getAvailableYearsFromCountry(this.selectionService.selectedPath);
     this.width = window.innerWidth;
     this.height = window.innerHeight - 100;
   }
@@ -48,7 +49,7 @@ export class DataviewComponent implements OnInit {
       let data: Crime[] = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
       */
       let data: Crime[];
-      this.dataService.getData(this.dataService.selectedPath, this.selectedYear)
+      this.dataService.getData(this.selectionService.selectedPath, this.selectedYear)
         .subscribe((crimes: Crime[]) => {
           data = crimes;
           let histoData: HistogramData[] = [];
@@ -56,7 +57,7 @@ export class DataviewComponent implements OnInit {
             histoData.push(new HistogramData(crime.name, crime.n_crimes));
           })
           this.changeType();
-          this.dataSource = this.chartService.buildHistogram(this.dataService.selectedPath[this.dataService.selectedPath.length - 1], this.selectedYear, histoData);
+          this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedPath[this.selectionService.selectedPath.length - 1], this.selectedYear, histoData);
         })
       
     }

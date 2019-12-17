@@ -21,7 +21,18 @@ export class UploadComponent implements OnInit {
   }
 
   public uploadData(country: string){
+    this.selectionService.selectCountry(country);
     alert("Uploading data from " + country + " endpoint");
+  }
+
+  public uploadMapping(country: string){
+    this.selectionService.selectCountry(country);
+    this.router.navigate(['/upload_mapping']);
+  }
+
+  public modifyMapping(country: string){
+    this.selectionService.selectCountry(country);
+    this.router.navigate(['/modify_mapping']);
   }
 
 }

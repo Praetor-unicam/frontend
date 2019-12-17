@@ -70,6 +70,10 @@ export class DataService {
     })
     return crimes;
   }
+
+  public getAvailableCountries(): string[]{
+    return ['Luxembourg', 'Cyprus', 'Italy'];
+  }
   
   /*
 

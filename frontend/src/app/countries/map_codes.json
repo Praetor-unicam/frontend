@@ -1,0 +1,190 @@
+[
+    {
+        "id": "001",
+        "name": "Albania"
+    },
+    {
+        "id": "002",
+        "name": "Andorra"
+    },
+    {
+        "id": "003",
+        "name": "Austria"
+    },
+    {
+        "id": "004",
+        "name": "Belarus"
+    },
+    {
+        "id": "005",
+        "name": "Belgium"
+    },
+    {
+        "id": "006",
+        "name": "Bosnia and Herzegovina"
+    },
+    {
+        "id": "007",
+        "name": "Bulgaria"
+    },
+    {
+        "id": "008",
+        "name": "Croatia"
+    },
+    {
+        "id": "044",
+        "name": "Cyprus"
+    },
+    {
+        "id": "009",
+        "name": "Czech Republic"
+    },
+    {
+        "id": "010",
+        "name": "Denmark"
+    },
+    {
+        "id": "011",
+        "name": "Estonia"
+    },
+    {
+        "id": "012",
+        "name": "Finland"
+    },
+    {
+        "id": "013",
+        "name": "France"
+    },
+    {
+        "id": "014",
+        "name": "Germany"
+    },
+    {
+        "id": "015",
+        "name": "Greece"
+    },
+    {
+        "id": "016",
+        "name": "Hungary"
+    },
+    {
+        "id": "017",
+        "name": "Iceland"
+    },
+    {
+        "id": "018",
+        "name": "Ireland"
+    },
+    {
+        "id": "019",
+        "name": "Italy"
+    },
+    {
+        "id": "047",
+        "name": "Kosovo"
+    },
+    {
+        "id": "020",
+        "name": "Latvia"
+    },
+    {
+        "id": "021",
+        "name": "Liechtenstein"
+    },
+    {
+        "id": "022",
+        "name": "Lithuania"
+    },
+    {
+        "id": "023",
+        "name": "Luxembourg"
+    },
+    {
+        "id": "024",
+        "name": "Macedonia"
+    },
+    {
+        "id": "025",
+        "name": "Malta"
+    },
+    {
+        "id": "026",
+        "name": "Moldova"
+    },
+    {
+        "id": "027",
+        "name": "Monaco"
+    },
+    {
+        "id": "028",
+        "name": "Montenegro"
+    },
+    {
+        "id": "029",
+        "name": "Netherlands"
+    },
+    {
+        "id": "030",
+        "name": "Norway"
+    },
+    {
+        "id": "031",
+        "name": "Poland"
+    },
+    {
+        "id": "032",
+        "name": "Portugal"
+    },
+    {
+        "id": "033",
+        "name": "Romania"
+    },
+    {
+        "id": "046",
+        "name": "Russia"
+    },
+    {
+        "id": "034",
+        "name": "San Marino"
+    },
+    {
+        "id": "035",
+        "name": "Serbia"
+    },
+    {
+        "id": "036",
+        "name": "Slovakia"
+    },
+    {
+        "id": "037",
+        "name": "Slovenia"
+    },
+    {
+        "id": "038",
+        "name": "Spain"
+    },
+    {
+        "id": "039",
+        "name": "Sweden"
+    },
+    {
+        "id": "040",
+        "name": "Switzerland"
+    },
+    {
+        "id": "045",
+        "name": "Turkey"
+    },
+    {
+        "id": "041",
+        "name": "Ukraine"
+    },
+    {
+        "id": "042",
+        "name": "United Kingdom"
+    },
+    {
+        "id": "043",
+        "name": "Vatican City"
+    }
+]

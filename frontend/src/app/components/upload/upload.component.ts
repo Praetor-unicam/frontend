@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from 'src/app/services/upload.service';
 import { Endpoint } from 'src/app/models/Endpoint';
+import { CountryStatus } from 'src/app/models/CountryStatus';
 
 @Component({
   selector: 'app-upload',
@@ -9,12 +10,12 @@ import { Endpoint } from 'src/app/models/Endpoint';
 })
 export class UploadComponent implements OnInit {
 
-  public endpoints: Endpoint[];
+  public countriesStatus: CountryStatus[];
 
   constructor(private uploadSevice: UploadService) { }
 
   ngOnInit() {
-    this.endpoints = this.uploadSevice.getEndpoints();
+    this.countriesStatus = this.uploadSevice.getCountriesStatus();
   }
 
 }

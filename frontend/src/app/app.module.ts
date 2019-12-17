@@ -294,6 +294,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DataviewComponent } from './components/dataview/dataview.component';
 import { UploadMappingComponent } from './components/upload-mapping/upload-mapping.component';
 import { ModifyMappingComponent } from './components/modify-mapping/modify-mapping.component';
+import { HomeComponent } from './components/home/home.component';
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Maps, Europe, 
@@ -453,7 +454,8 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   FusionTheme);
 
   const appRoutes: Routes = [
-    { path: 'home', component: MapComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'map', component: MapComponent },
     { path: '',   redirectTo: '/home', pathMatch: 'full' },
     { path: 'upload', component: UploadComponent },
     { path: 'dataview', component: DataviewComponent },
@@ -462,7 +464,7 @@ FusionChartsModule.fcRoot(FusionCharts, Maps, Europe,
   ];
 
 @NgModule({
-  declarations: [AppComponent, MapComponent, UploadComponent, NavbarComponent, DataviewComponent, UploadMappingComponent, ModifyMappingComponent],
+  declarations: [AppComponent, MapComponent, UploadComponent, NavbarComponent, DataviewComponent, UploadMappingComponent, ModifyMappingComponent, HomeComponent],
   imports: [
     BrowserModule, 
     FusionChartsModule,

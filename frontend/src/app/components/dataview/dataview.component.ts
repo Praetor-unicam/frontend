@@ -49,6 +49,7 @@ export class DataviewComponent implements OnInit {
       let data: Crime[] = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
       */
       let data: Crime[];
+      /*
       this.dataService.getData(this.selectionService.selectedPath, this.selectedYear)
         .subscribe((crimes: Crime[]) => {
           data = crimes;
@@ -59,6 +60,15 @@ export class DataviewComponent implements OnInit {
           this.changeType();
           this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedPath[this.selectionService.selectedPath.length - 1], this.selectedYear, histoData);
         })
+        */
+      data = this.dataService.getData(this.selectionService.selectedPath, this.selectedYear);
+      let histoData: HistogramData[] = [];
+      data.forEach((crime: Crime) => {
+        histoData.push(new HistogramData(crime.name, crime.n_crimes));
+      })
+      this.changeType();
+      this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedPath[this.selectionService.selectedPath.length - 1], this.selectedYear, histoData);
+       
       
     }
     else{

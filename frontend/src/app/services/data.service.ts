@@ -60,8 +60,8 @@ export class DataService {
     return years;
   }
   
-  /*
-  public getData(country: string, year: number): Crime[]{
+  
+  public getData(country_path: string[], year: number): Crime[]{
     let crimes: Crime[] = null;
     data.year_data.forEach((yearData: YearData) => {
       if(yearData.year == year){
@@ -70,7 +70,8 @@ export class DataService {
     })
     return crimes;
   }
-  */
+  
+  /*
 
   public getData(country_path: string[], year: number): Observable<Crime[]>{
     //check if country_path array is in the right format
@@ -94,6 +95,7 @@ export class DataService {
       return this.http.get<Crime[]>('api/data/' + url_string);
     }
   }
+  */
 
   /*
   public getAvailableYearsFromCountry(country: string): Observable<number[]>{

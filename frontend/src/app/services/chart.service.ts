@@ -4,12 +4,18 @@ import { HistogramData } from '../models/HistogramData';
 import { DataService } from './data.service';
 import * as europe_codes from './../countries/map_codes.json';
 
+
+const EUROPE_NULL_COLOR = '#000000';
+const COUNTRY_NULL_COLOR = '#004c7f';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ChartService {
 
-  public data;
+  public data: any;
+  public chartData: any;
+  public europeChartData: any;
 
   constructor(private dataService: DataService){
     let availableCountries = this.dataService.getAvailableCountries();
@@ -21,14 +27,49 @@ export class ChartService {
         let newChartData = { id: country_code.id, value: 1, showLabel: 0 };
         chartData.push(newChartData);
       }
-
+      this.europeChartData = chartData;
+      this.chartData = this.europeChartData;
     });
+    this.refreshChart(this.chartData, EUROPE_NULL_COLOR);
+  }
+
+  
+
+  public getMap(country: string){
+    console.log(country);
+    if(country != 'Europe'){
+      this.refreshChart(null, COUNTRY_NULL_COLOR);
+    }
+    else{
+      this.refreshChart(this.europeChartData, EUROPE_NULL_COLOR);
+    }
+    return this.data;
+  }
+
+  public getMapNameByCountryName(name: string): string{
+    return dictionary[name];
+  }
+
+  public buildHistogram(country: string, year: number, data: HistogramData[]){
+    let d = {
+      chart: {
+        caption: country + ' in ' + year,
+        xaxisname: "Crime",
+        yaxisname: "Number",
+        theme: "fusion"
+      },
+      data: data
+    };
+    return d;
+  }
+
+  public refreshChart(chartData: any, nullColor: string){
     this.data = {
       chart: {
         legendposition: "BOTTOM",
         entitytooltext: "$lname",
         entityfillhovercolor: "#149af8",
-        nullentitycolor: "#000000",
+        nullentitycolor: nullColor,
         theme: "fusion",
         borderColor: "#000000",
         
@@ -54,26 +95,4 @@ export class ChartService {
     };
   }
 
-  
-
-  public getMap(){
-    return this.data;
-  }
-
-  public getMapByName(name: string): string{
-    return dictionary[name];
-  }
-
-  public buildHistogram(country: string, year: number, data: HistogramData[]){
-    let d = {
-      chart: {
-        caption: country + ' in ' + year,
-        xaxisname: "Crime",
-        yaxisname: "Number",
-        theme: "fusion"
-      },
-      data: data
-    };
-    return d;
-  }
 }

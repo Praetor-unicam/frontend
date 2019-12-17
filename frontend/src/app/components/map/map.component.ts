@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { SelectionService } from 'src/app/services/selection.service';
 
-
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -21,9 +20,10 @@ export class MapComponent implements OnInit {
   public dataFormat: string = "json";
   public dataSource: string = this.data;
   public previousCountries: string[] = [];
+  public previousLabels: string[] = [];
 
   constructor(private zone: NgZone, private chartService: ChartService, private router: Router, private selectionService: SelectionService){
-    this.data = this.chartService.getMap();
+    this.data = this.chartService.getMap(this.current_label);
   }
 
   ngOnInit() {
@@ -40,17 +40,20 @@ export class MapComponent implements OnInit {
   public update($event: any) {
     //push current country in previousCountries list
     this.previousCountries.push(this.current_map_name);
+    this.previousLabels.push(this.current_label);
     //have to add zone, otherwise view will not be updated
     this.zone.run(() => {
       //label refers to country name
-      this.current_label = $event.dataObj.label;
+      let current_label = $event.dataObj.label;
       //get new map 
-      let new_map = this.chartService.getMapByName(this.current_label);
+      let new_map = this.chartService.getMapNameByCountryName(current_label);
       //add country label to map_path in order to send it via API call
-      this.map_path.push(this.current_label);
+      this.map_path.push(current_label);
 
       if(new_map != null && new_map != ""){
         this.current_map_name = new_map;
+        this.current_label = current_label;
+        this.data = this.chartService.getMap(this.current_label);
       }
       else{
         if(this.current_map_name == 'europe' || new_map === ""){
@@ -70,6 +73,8 @@ export class MapComponent implements OnInit {
       let country = this.previousCountries.pop();
       this.map_path.pop();
       this.current_map_name = country;
+      this.current_label = this.previousLabels.pop();
+      this.data = this.chartService.getMap(this.current_label);
     }
   }
 

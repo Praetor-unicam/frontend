@@ -7,12 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadMappingComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
+  public fileData = null;
+  constructor() { }
+  
+  fileEvent(fileInput: any) {
+    console.log("HEY")
+    this.fileData = <File>fileInput.target.files[0];
+  }
+  
+  onSubmit() {
+    console.log(this.fileData);
+    let formData = new FormData();
+    formData.append('file', this.fileData);
+    console.log(formData);
   }
 
-  public onSubmit(){
-    console.log("Submit");
+  ngOnInit() {
   }
 }

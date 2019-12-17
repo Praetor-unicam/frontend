@@ -12,4 +12,7 @@ export class UploadMappingComponent implements OnInit {
   ngOnInit() {
   }
 
+  public onSubmit(){
+    console.log("Submit");
+  }
 }

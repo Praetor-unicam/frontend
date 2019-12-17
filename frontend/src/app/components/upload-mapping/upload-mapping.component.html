@@ -1,3 +1,11 @@
+
+<div class="form-group">
+  <select [(ngModel)]="selectedCountry" class="form-control" id="sel1">
+    <option [ngValue]="undefined" disabled  selected> Select the country you want to categorize </option>
+    <option *ngFor='let year of years'>{{year}}</option>
+  </select>
+</div> 
+
 <div class="container">
   <div class="row">
       <div class="col-md-6 offset-md-3">

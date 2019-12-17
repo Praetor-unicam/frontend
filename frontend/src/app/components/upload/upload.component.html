@@ -2,16 +2,20 @@
   <thead>
     <tr>
       <th scope="col">Country</th>
-      <th scope="col">Status</th>
-      <th scope="col">Upload</th>
+      <th scope="col">Endpoint Status</th>
+      <th scope="col">Mapping Status</th>
+      <th scope="col">Upload Data From Endpoint</th>
+      <th scope="col">Upload/Modify Mapping</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor='let endpoint of endpoints'>
       <td>{{endpoint.country}}</td>
       <td>{{endpoint.status}}</td>
+      <td>NOT AVAILABLE</td>
       <td *ngIf='endpoint.status == "AVAILABLE"'><button class="btn btn-info">Upload</button></td>
-      <td  *ngIf='endpoint.status == "NOT_AVAILABLE"' ><button class="btn btn-info" disabled>Upload</button></td>
+      <td  *ngIf='endpoint.status == "NOT_AVAILABLE"' ><button class="btn btn-info" disabled>Upload Data</button></td>
+      <td><button class="btn btn-info">Upload Mapping</button></td>
     </tr>
   </tbody>
 </table>

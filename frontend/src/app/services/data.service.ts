@@ -105,4 +105,8 @@ export class DataService {
     return this.http.get<number[]>('api/years/' + country);
   }
   */
+
+  public getAvailableCountries(): string[]{
+    return ['Luxembourg', '']
+  }
 }

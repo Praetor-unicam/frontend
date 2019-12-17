@@ -15,9 +15,6 @@ export class FileService {
     };
   }
 
-
-  
-
   public readTxt(file: any){
     this.reader.readAsText(file);
   }

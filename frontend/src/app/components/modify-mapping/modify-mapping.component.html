@@ -1,3 +1,21 @@
-<p>
-  modify-mapping works!
-</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Original Category</th>
+      <th scope="col">ICCS Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor='let mapping of mappings'>
+      <td>{{mapping.category}}</td>
+      <td>
+          <div class="form-group">
+              <select class="form-control" id="sel">
+                  <option selected>{{mapping.ICCS_category}}</option>
+                <option *ngFor='let category of ICCS_categories'>{{category}}</option>
+              </select>
+            </div> 
+      </td>
+    </tr>
+  </tbody>
+</table>

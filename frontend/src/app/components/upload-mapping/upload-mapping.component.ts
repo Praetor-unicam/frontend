@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SelectionService } from 'src/app/services/selection.service';
+import { FileService } from 'src/app/services/file.service';
 
 @Component({
   selector: 'app-upload-mapping',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadMappingComponent implements OnInit {
 
+  public country: string;
+
 
   public fileData = null;
-  constructor() { }
+  constructor(private selectionService: SelectionService, private fileService: FileService) { }
   
   fileEvent(fileInput: any) {
     this.fileData = <File>fileInput.target.files[0];
@@ -17,6 +21,7 @@ export class UploadMappingComponent implements OnInit {
   
   onSubmit() {
     console.log(this.fileData);
+    this.fileService.readTxt(this.fileData);
     if(this.fileData == null){
       alert("You must first select a file.");
     }
@@ -31,5 +36,6 @@ export class UploadMappingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.country = this.selectionService.selectedCountry;
   }
 }

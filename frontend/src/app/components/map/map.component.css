@@ -1,5 +1,19 @@
-.map {
-    height: 100%;
-    padding: 0;
-  }
-  
+.map-container {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.map-frame {
+  border: 2px solid black;
+  height: 100%;
+}
+body {
+  /* height of .navbar, customize with @navbar-height variable */
+  padding-top: 50px;
+}
+#map {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: auto;
+}

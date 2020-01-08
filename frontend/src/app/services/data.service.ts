@@ -56,12 +56,12 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   
-  public getAvailableYearsFromCountry(country_path: string[]): number[]{
+  public getAvailableYearsFromCountry(country: string): number[]{
     return years;
   }
   
   
-  public getData(country_path: string[], year: number): Crime[]{
+  public getData(country: string, year: number): Crime[]{
     let crimes: Crime[] = null;
     data.year_data.forEach((yearData: YearData) => {
       if(yearData.year == year){

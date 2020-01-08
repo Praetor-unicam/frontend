@@ -11,6 +11,7 @@ export class MapService {
   constructor(private http: HttpClient) { 
   }
 
+  /*
   public getMapByID(id: string){
     let file: string;
     switch(id){
@@ -26,5 +27,15 @@ export class MapService {
       break;
     }
     return this.http.get(file);
+  }
+  */
+
+  public getMapByID(id: string){
+    if(id == 'EU'){
+      return this.http.get('assets/maps/EU.geojson');
+    }
+    else{
+      return this.http.get('api/map/' + id);
+    }
   }
 }

@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-2">
     <p>{{currentID}}</p>
-    <button class="btn btn-info">Select</button>
+    <button class="btn btn-info" (click) = "select()">Select</button>
     <button *ngIf = "previousMaps.length > 0" class="btn btn-danger" (click) = "navigateToPreviousLayer()">Back</button>
   </div>
 </div>

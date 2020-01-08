@@ -21,8 +21,9 @@ export class MapComponent implements OnInit, AfterViewInit {
   public previousMaps: any[] = [];
   public currentLatLng: L.LatLngExpression = [ 50.1022233, 9.2544194 ];
   public currentID: string = 'EU';
+  public currentLabel: string = 'Europe';
 
-  constructor(private zone: NgZone, private mapService: MapService) { }
+  constructor(private zone: NgZone, private mapService: MapService, private router: Router, private selectionService: SelectionService) { }
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -73,10 +74,12 @@ export class MapComponent implements OnInit, AfterViewInit {
             let id: string = feature.id || feature.properties.id;
             console.log(id);
             this.currentID = id;
+            this.currentLabel = feature.properties.NUTS_NAME;
             this.navigateToNextLayer(this.currentID);
             }
             else{
               this.currentID = feature.properties.GISCO_ID;
+              this.currentLabel = feature.properties.LAU_LABEL;
             }
           }
         })
@@ -111,7 +114,8 @@ export class MapComponent implements OnInit, AfterViewInit {
   private navigateToNextLayer(id: string){
     this.mapService.getMapByID(id)
       .subscribe((states: any) => {
-        this.states = states;
+        console.log(states[0])
+        this.states = states[0];
         this.map.removeLayer(this.currentLayer);
         this.initStatesLayer();
       })
@@ -126,12 +130,11 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.currentID = prevMap.id;
     this.navigateToNextLayer(this.currentID);
   }
-/*
+
   public select(){
-    console.log(this.map_path);
-    alert("Selecting region " + this.map_path);
-    this.selectionService.selectRegion(this.map_path);
+    alert("Selecting region " + this.currentID);
+    this.selectionService.selectCountry(this.currentID);
     this.router.navigate(['/dataview']);
   }
-  */
+
 }

@@ -62,6 +62,7 @@ export class MapComponent implements OnInit, AfterViewInit {
           mouseover: (e) => {this.highlightFeature(e); layer.openPopup();},
           mouseout: (e) => {this.resetFeature(e); layer.closePopup();},
           click: (e) => {
+            if(this.currentID.length < 5){
             //create prvious map object
             let prevMap = {id: this.currentID, latlng: this.currentLatLng};
             this.previousMaps.push(prevMap);
@@ -73,6 +74,10 @@ export class MapComponent implements OnInit, AfterViewInit {
             console.log(id);
             this.currentID = id;
             this.navigateToNextLayer(this.currentID);
+            }
+            else{
+              this.currentID = feature.properties.GISCO_ID;
+            }
           }
         })
         .bindPopup(feature.properties.NUTS_NAME || feature.properties.LAU_LABEL, { closeButton: false })

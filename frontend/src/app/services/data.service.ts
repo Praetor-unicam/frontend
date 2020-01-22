@@ -12,16 +12,16 @@ const data: CountryData = {
       year: 2017,
       crimes: [
         {
-          name: 'Offences against goods',
-          n_crimes: 3584
+          crime: 'Offences against goods',
+          value: 3584
         },
         {
-          name: 'Burglaries',
-          n_crimes: 785
+          crime: 'Burglaries',
+          value: 785
         },
         {
-          name: 'Drug cases',
-          n_crimes: 125
+          crime: 'Drug cases',
+          value: 125
         }
       ]
     },
@@ -29,16 +29,16 @@ const data: CountryData = {
       year: 2018,
       crimes: [
         {
-          name: 'Offences against goods',
-          n_crimes: 3584
+          crime: 'Offences against goods',
+          value: 3584
         },
         {
-          name: 'Burglaries',
-          n_crimes: 785
+          crime: 'Burglaries',
+          value: 785
         },
         {
-          name: 'Drug cases',
-          n_crimes: 125
+          crime: 'Drug cases',
+          value: 125
         }
       ]
     }
@@ -60,7 +60,7 @@ export class DataService {
     return years;
   }
   
-  
+  /*
   public getData(country: string, year: number): Crime[]{
     let crimes: Crime[] = null;
     data.year_data.forEach((yearData: YearData) => {
@@ -71,35 +71,14 @@ export class DataService {
     return crimes;
   }
 
+  */
   public getAvailableCountries(): string[]{
     return ['Luxembourg', 'Cyprus', 'Italy'];
   }
-  
-  /*
 
-  public getData(country_path: string[], year: number): Observable<Crime[]>{
-    //check if country_path array is in the right format
-    if(country_path[0] == null || country_path.length != 3){
-      alert("Something went wrong during loading of data. Are you sure you specified everything?");
-      return null;
-    }
-    else{
-      //create url string
-      let last_country: string = country_path[0];
-      let url_string: string = country_path[0] + '/' + year;
-      for(let i = 1; i < country_path.length; i++){
-        if(country_path[i] != null){
-          url_string = url_string + '/' + country_path[i];
-          last_country = country_path[i];
-        }
-        else{
-          url_string = url_string + '/' + last_country;
-        }
-      };
-      return this.http.get<Crime[]>('api/data/' + url_string);
-    }
+  public getData(country_id: string, year: number): Observable<Crime[]>{
+      return this.http.get<Crime[]>('api/data/' + country_id.substring(0,2) + '/' + year + '/' + country_id);
   }
-  */
 
   /*
   public getAvailableYearsFromCountry(country: string): Observable<number[]>{

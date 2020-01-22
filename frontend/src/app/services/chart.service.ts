@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import dictionary from '../models/CountriesInfo';
 import { HistogramData } from '../models/HistogramData';
 import { DataService } from './data.service';
 import * as europe_codes from './../countries/map_codes.json';
@@ -33,22 +32,7 @@ export class ChartService {
     this.refreshChart(this.chartData, EUROPE_NULL_COLOR);
   }
 
-  
 
-  public getMap(country: string){
-    console.log(country);
-    if(country != 'Europe'){
-      this.refreshChart(null, COUNTRY_NULL_COLOR);
-    }
-    else{
-      this.refreshChart(this.europeChartData, EUROPE_NULL_COLOR);
-    }
-    return this.data;
-  }
-
-  public getMapNameByCountryName(name: string): string{
-    return dictionary[name];
-  }
 
   public buildHistogram(country: string, year: number, data: HistogramData[]){
     let d = {

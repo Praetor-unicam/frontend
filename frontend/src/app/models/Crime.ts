@@ -1,4 +1,5 @@
 export class Crime{
-    name: string;
-    n_crimes: number;
+    _id?: string;
+    crime: string;
+    value: number;
 }

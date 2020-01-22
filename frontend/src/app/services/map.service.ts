@@ -29,7 +29,9 @@ export class MapService {
     return this.http.get(file);
   }
   */
+  
 
+  
   public getMapByID(id: string){
     if(id == 'EU'){
       return this.http.get('assets/maps/EU.geojson');
@@ -38,4 +40,5 @@ export class MapService {
       return this.http.get('api/map/' + id);
     }
   }
+  
 }

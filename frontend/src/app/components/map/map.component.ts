@@ -65,14 +65,12 @@ export class MapComponent implements OnInit, AfterViewInit {
           click: (e) => {
             if(this.currentID.length < 5){
             //create prvious map object
-            let prevMap = {id: this.currentID, latlng: this.currentLatLng};
+            let prevMap = {id: this.currentID, label: this.currentLabel, latlng: this.currentLatLng};
             this.previousMaps.push(prevMap);
-            console.log(this.previousMaps);
             this.zoomLevel += 1;
             this.currentLatLng = L.latLng(e.latlng);
             this.map.flyTo(this.currentLatLng, this.zoomLevel);
             let id: string = feature.id || feature.properties.id;
-            console.log(id);
             this.currentID = id;
             this.currentLabel = feature.properties.NUTS_NAME;
             this.navigateToNextLayer(this.currentID);
@@ -114,8 +112,8 @@ export class MapComponent implements OnInit, AfterViewInit {
   private navigateToNextLayer(id: string){
     this.mapService.getMapByID(id)
       .subscribe((states: any) => {
-        console.log(states[0])
-        this.states = states[0];
+        this.states = states;
+        //this.states = states[0];
         this.map.removeLayer(this.currentLayer);
         this.initStatesLayer();
       })
@@ -123,11 +121,11 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   private navigateToPreviousLayer(){
     let prevMap = this.previousMaps.pop();
-    console.log(prevMap)
     this.zoomLevel -= 1;
     this.currentLatLng = prevMap.latlng;
     this.map.flyTo(this.currentLatLng, this.zoomLevel);
     this.currentID = prevMap.id;
+    this.currentLabel = prevMap.label;
     this.navigateToNextLayer(this.currentID);
   }
 
@@ -136,5 +134,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.selectionService.selectCountry(this.currentID);
     this.router.navigate(['/dataview']);
   }
+
 
 }

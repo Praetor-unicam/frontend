@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class SelectionService {
 
   public selectedCountry: string;
+  public selectedAnalysis: string;
 
   constructor() { }
 
@@ -13,4 +14,7 @@ export class SelectionService {
     this.selectedCountry = country;
   }
 
+  public selectAnalysisType(type: string){
+    this.selectedAnalysis = type;
+  }
 }

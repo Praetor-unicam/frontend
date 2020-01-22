@@ -27,12 +27,11 @@ export class UploadComponent implements OnInit {
 
   public uploadMapping(country: string){
     this.selectionService.selectCountry(country);
-    this.router.navigate(['/upload_mapping']);
+    this.router.navigate(['/modify_mapping']);
   }
 
   public modifyMapping(country: string){
     this.selectionService.selectCountry(country);
     this.router.navigate(['/modify_mapping']);
   }
-
 }

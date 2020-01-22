@@ -20,7 +20,7 @@ export class DataviewComponent implements OnInit {
   public width: number;
   public height: number;
   public dataSource: any = null;
-  public dataFormar = "json";
+  public dataFormat = "json";
   public type = "column2d";
 
   constructor(private dataService: DataService, private chartService: ChartService, private selectionService: SelectionService) { }
@@ -48,7 +48,7 @@ export class DataviewComponent implements OnInit {
       /*
       let data: Crime[] = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
       */
-      let data: Crime[];
+      //let data: Crime[];
       /*
       this.dataService.getData(this.selectionService.selectedPath, this.selectedYear)
         .subscribe((crimes: Crime[]) => {
@@ -61,15 +61,17 @@ export class DataviewComponent implements OnInit {
           this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedPath[this.selectionService.selectedPath.length - 1], this.selectedYear, histoData);
         })
         */
-      data = this.dataService.getData(this.selectionService.selectedCountry, this.selectedYear);
-      let histoData: HistogramData[] = [];
-      data.forEach((crime: Crime) => {
-        histoData.push(new HistogramData(crime.name, crime.n_crimes));
-      })
-      this.changeType();
-      this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedCountry, this.selectedYear, histoData);
-       
-      
+      this.dataService.getData(this.selectionService.selectedCountry, this.selectedYear)
+        .subscribe((data: Crime[]) => {
+          console.log(data);
+          let histoData: HistogramData[] = [];
+          data.forEach((crime: Crime) => {
+            histoData.push(new HistogramData(crime.crime, crime.value));
+          })
+          this.changeType();
+          this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedCountry, this.selectedYear, histoData);
+        })
+        
     }
     else{
       alert("You must choose a year.");

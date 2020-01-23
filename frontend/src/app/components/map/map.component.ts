@@ -131,7 +131,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   public select(){
     alert("Selecting region " + this.currentID);
-    this.selectionService.selectCountry(this.currentID);
+    this.selectionService.selectMapCountry(this.currentID, this.currentLabel);
     this.router.navigate(['/dataview']);
   }
 

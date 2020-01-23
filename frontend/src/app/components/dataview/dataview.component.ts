@@ -4,6 +4,8 @@ import { ChartService } from 'src/app/services/chart.service';
 import { Crime } from 'src/app/models/Crime';
 import { HistogramData } from 'src/app/models/HistogramData';
 import { SelectionService } from 'src/app/services/selection.service';
+import { Country } from 'src/app/models/Country';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,16 +25,27 @@ export class DataviewComponent implements OnInit {
   public dataFormat = "json";
   public type = "column2d";
 
-  constructor(private dataService: DataService, private chartService: ChartService, private selectionService: SelectionService) { }
+  public countries: Country[] = [];
+
+  constructor(private dataService: DataService, private chartService: ChartService, private selectionService: SelectionService, private router: Router) { }
 
   ngOnInit() {
-    /*
-    this.dataService.getAvailableYearsFromCountry(this.dataService.selectedRegion)
+    this.countries = this.selectionService.countriesForAnalysis;
+    this.countries.forEach((country: Country) => {
+      this.dataService.getAvailableYearsFromCountry(country.id)
       .subscribe((years: number[]) => {
-        this.years = years;
+        years.forEach((year: number) => {
+          if(!this.years.includes(year)){
+            this.years.push(year);
+            this.years = this.years.sort((n1, n2) => n1 - n2);
+          }
+        })
+      },
+      error => {
+        alert("There was an error getting available years from the database for " + country.label + ". Please try again later.");
       })
-      */
-    this.years = this.dataService.getAvailableYearsFromCountry(this.selectionService.selectedCountry);
+    });
+    //this.years = this.dataService.getAvailableYearsFromCountry(this.selectionService.selectedCountry);
     this.width = window.innerWidth;
     this.height = window.innerHeight - 100;
   }
@@ -45,23 +58,7 @@ export class DataviewComponent implements OnInit {
 
   public load(){
     if(this.selectedYear != null){
-      /*
-      let data: Crime[] = this.dataService.getData(this.dataService.selectedRegion, this.selectedYear);
-      */
-      //let data: Crime[];
-      /*
-      this.dataService.getData(this.selectionService.selectedPath, this.selectedYear)
-        .subscribe((crimes: Crime[]) => {
-          data = crimes;
-          let histoData: HistogramData[] = [];
-          data.forEach((crime: Crime) => {
-            histoData.push(new HistogramData(crime.name, crime.n_crimes));
-          })
-          this.changeType();
-          this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedPath[this.selectionService.selectedPath.length - 1], this.selectedYear, histoData);
-        })
-        */
-      this.dataService.getData(this.selectionService.selectedCountry, this.selectedYear)
+      this.dataService.getData(this.countries[0].id, this.selectedYear)
         .subscribe((data: Crime[]) => {
           console.log(data);
           let histoData: HistogramData[] = [];
@@ -69,7 +66,10 @@ export class DataviewComponent implements OnInit {
             histoData.push(new HistogramData(crime.crime, crime.value));
           })
           this.changeType();
-          this.dataSource = this.chartService.buildHistogram(this.selectionService.selectedCountry, this.selectedYear, histoData);
+          this.dataSource = this.chartService.buildHistogram(this.countries[0].label, this.selectedYear, histoData);
+        },
+        error => {
+          alert("There was an error loading data from the database. Please try again later.");
         })
         
     }
@@ -85,5 +85,14 @@ export class DataviewComponent implements OnInit {
     if(this.selectedChart == 'Pie Chart'){
       this.type = 'pie3d';
     }
+  }
+
+  public addCountry(){
+    this.router.navigate(['/map']);
+  }
+
+  public removeCountry(country: Country){
+    this.selectionService.removeMapCountry(country);
+    this.countries = this.selectionService.countriesForAnalysis;
   }
 }

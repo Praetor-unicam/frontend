@@ -18,7 +18,7 @@ export class ChartService {
 
   constructor(private dataService: DataService){
     let availableCountries = this.dataService.getAvailableCountries();
-    console.log(europe_codes);
+    //console.log(europe_codes);
     let codes: any = europe_codes;
     let chartData: { id: string, value: number, showLabel: number}[] = [];
     codes.default.forEach((country_code: {id: string, name: string}) => {

@@ -18,7 +18,7 @@ export class ModifyMappingComponent implements OnInit {
   constructor(private mappingService: MappingService, private selectionService: SelectionService) { }
 
   ngOnInit() {
-    this.country = this.selectionService.selectedCountry;
+    this.country = this.selectionService.selectedUploadCountry;
     this.mappings = this.mappingService.getMappingFromCountry(this.country);
     this.ICCS_categories = this.mappingService.getICCSCategories();
   }

@@ -37,6 +37,6 @@ export class UploadMappingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.country = this.selectionService.selectedCountry;
+    this.country = this.selectionService.selectedUploadCountry;
   }
 }

@@ -40,5 +40,9 @@ export class MapService {
       return this.http.get('api/map/' + id);
     }
   }
+
+  public getAvailableMaps(country_id: string, ids: string[]){
+    return this.http.get('/api/data_available/' + country_id.substring(0,2) + '/?nuts_id='+ JSON.stringify(ids));
+  }
   
 }

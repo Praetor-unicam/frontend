@@ -60,10 +60,11 @@ export class DataviewComponent implements OnInit {
     if(this.selectedYear != null){
       this.dataService.getData(this.countries[0].id, this.selectedYear)
         .subscribe((data: Crime[]) => {
-          console.log(data);
           let histoData: HistogramData[] = [];
           data.forEach((crime: Crime) => {
-            histoData.push(new HistogramData(crime.crime, crime.value));
+            if(crime.crime != 'total'){
+              histoData.push(new HistogramData(crime.crime, crime.value));
+            }
           })
           this.changeType();
           this.dataSource = this.chartService.buildHistogram(this.countries[0].label, this.selectedYear, histoData);

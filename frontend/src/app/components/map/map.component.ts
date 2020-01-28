@@ -50,6 +50,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   private initStatesLayer() {
+    /*
     let ids = [];
     this.states.features.forEach((feature: any) => {
       if(feature.properties.NUTS_ID != null){
@@ -65,14 +66,15 @@ export class MapComponent implements OnInit, AfterViewInit {
           let index = this.states.features.findIndex(x => x.properties.NUTS_ID === r.NUTS || x.properties.GISCO_ID === r.NUTS);
           this.states.features[index].properties.available = r.available;
         });
-
+        */
         this.currentLayer = L.geoJSON(this.states, {
           style: (feature) => ({
             weight: 3,
             opacity: 0.5,
             color: '#0000ff',
             fillOpacity: 0.5,
-            fillColor: this.getColor(feature.properties.available)
+            //fillColor: this.getColor(feature.properties.available)
+            fillColor: '#0066ff'
           }),
           onEachFeature: (feature, layer) => (
             layer.on({
@@ -101,10 +103,11 @@ export class MapComponent implements OnInit, AfterViewInit {
           )
         });
         this.map.addLayer(this.currentLayer);
-      },
+      /*},
       error => {
         alert("There was an error getting the availability of data.");
       });
+      */
   }
 
   private highlightFeature(e)  {
@@ -162,7 +165,7 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   public select(){
-    alert("Selecting region " + this.currentID);
+    alert("Selecting region " + this.currentLabel);
     this.selectionService.selectMapCountry(this.currentID, this.currentLabel);
     this.router.navigate(['/dataview']);
   }

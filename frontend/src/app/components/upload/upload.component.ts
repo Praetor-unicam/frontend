@@ -27,7 +27,7 @@ export class UploadComponent implements OnInit {
 
   public uploadMapping(country: string){
     this.selectionService.selectUploadCountry(country);
-    this.router.navigate(['/modify_mapping']);
+    this.router.navigate(['/upload_mapping']);
   }
 
   public modifyMapping(country: string){

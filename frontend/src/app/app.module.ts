@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -19,9 +19,11 @@ import { DataviewComponent } from './components/dataview/dataview.component';
 import { UploadMappingComponent } from './components/upload-mapping/upload-mapping.component';
 import { ModifyMappingComponent } from './components/modify-mapping/modify-mapping.component';
 import { HomeComponent } from './components/home/home.component';
+import { UploadFileComponent } from './components/upload-file/upload-file.component';
 
 // Add dependencies for FusionChartsModule
 FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
+const location = window.location.origin;
 
   const appRoutes: Routes = [
     { path: 'home', component: DataviewComponent },
@@ -30,11 +32,12 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
     { path: 'upload', component: UploadComponent },
     { path: 'dataview', component: DataviewComponent },
     { path: 'upload_mapping', component: UploadMappingComponent },
-    { path: 'modify_mapping', component: ModifyMappingComponent }
+    { path: 'modify_mapping', component: ModifyMappingComponent },
+    { path: 'upload_file', component: UploadFileComponent }
   ];
 
 @NgModule({
-  declarations: [AppComponent, MapComponent, UploadComponent, NavbarComponent, DataviewComponent, UploadMappingComponent, ModifyMappingComponent, HomeComponent],
+  declarations: [AppComponent, MapComponent, UploadComponent, NavbarComponent, DataviewComponent, UploadMappingComponent, ModifyMappingComponent, HomeComponent, UploadFileComponent],
   imports: [
     BrowserModule, 
     FusionChartsModule,
@@ -43,7 +46,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
       appRoutes,
       { enableTracing: false }
     ),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

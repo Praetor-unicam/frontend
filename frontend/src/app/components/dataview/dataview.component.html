@@ -27,7 +27,7 @@
         <div class="col-sm-4">
           <div class="form-group">
             <select [(ngModel)]="selectedYear" class="form-control" id="sel1">
-              <option [ngValue]="undefined" disabled  selected> Select the year to display </option>
+              <!--<option [ngValue]="undefined" disabled  selected> Select the year to display </option>-->
               <option *ngFor='let year of years'>{{year}}</option>
             </select>
           </div> 
@@ -35,7 +35,7 @@
         <div class="col-sm-4">
           <div class="form-group">
           <select [(ngModel)]="selectedChart" class="form-control" id="sel2">
-            <option [ngValue]="undefined" disabled  selected> Select the type of chart to display </option>
+            <!--<option [ngValue]="undefined" disabled  selected> Select the type of chart to display </option>-->
             <option *ngFor='let chart of charts'>{{chart}}</option>
           </select>
         </div> 

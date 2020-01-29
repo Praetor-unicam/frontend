@@ -4,6 +4,7 @@ import { YearData } from '../models/YearData';
 import { Crime } from '../models/Crime';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Country } from '../models/Country';
 
 const data: CountryData = {
   country: 'Luxembourg',
@@ -86,5 +87,8 @@ export class DataService {
     return this.http.get<number[]>('api/years/' + country_id.substring(0,2) + '/' + country_id);
   }
   
+  public compareContriesInYear(countries: Country[], year: number){
+    return this.http.get('/compare');
+  }
 
 }

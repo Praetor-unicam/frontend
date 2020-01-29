@@ -23,7 +23,7 @@ export class DataviewComponent implements OnInit {
   public height: number;
   public dataSource: any = null;
   public dataFormat = "json";
-  public type = "column2d";
+  public type = null;
 
   public countries: Country[] = [];
 
@@ -31,6 +31,12 @@ export class DataviewComponent implements OnInit {
 
   ngOnInit() {
     this.countries = this.selectionService.countriesForAnalysis;
+    if(this.countries.length == 1){
+      this.charts = ['Histogram', 'Pie Chart'];
+    }
+    else{
+      this.charts = ['Histogram'];
+    }
     this.countries.forEach((country: Country) => {
       this.dataService.getAvailableYearsFromCountry(country.id)
       .subscribe((years: number[]) => {
@@ -58,7 +64,8 @@ export class DataviewComponent implements OnInit {
 
   public load(){
     if(this.selectedYear != null){
-      this.dataService.getData(this.countries[0].id, this.selectedYear)
+      if(this.countries.length == 1){
+        this.dataService.getData(this.countries[0].id, this.selectedYear)
         .subscribe((data: Crime[]) => {
           let histoData: HistogramData[] = [];
           data.forEach((crime: Crime) => {
@@ -67,11 +74,25 @@ export class DataviewComponent implements OnInit {
             }
           })
           this.changeType();
+          console.log(this.type);
           this.dataSource = this.chartService.buildHistogram(this.countries[0].label, this.selectedYear, histoData);
         },
         error => {
           alert("There was an error loading data from the database. Please try again later.");
         })
+      }
+      else{
+        this.dataService.compareContriesInYear(this.countries, this.selectedYear)
+          .subscribe((data: any) => {
+            this.changeType();
+            console.log(this.type);
+            this.dataSource = this.chartService.buildComparingHistogram(data.countries);
+          },
+          error => {
+            alert("There was an error loading data from the database (compare data).");
+            console.log(error);
+          })
+      }
         
     }
     else{
@@ -80,11 +101,18 @@ export class DataviewComponent implements OnInit {
   }
 
   public changeType(){
-    if(this.selectedChart == 'Histogram'){
-      this.type = 'column2d';
+    if(this.countries.length == 1){
+      if(this.selectedChart == 'Histogram'){
+        this.type = 'column2d';
+      }
+      if(this.selectedChart == 'Pie Chart'){
+        this.type = 'pie3d';
+      }
     }
-    if(this.selectedChart == 'Pie Chart'){
-      this.type = 'pie3d';
+    else{
+      if(this.selectedChart == 'Histogram'){
+        this.type = 'mscolumn2d';
+      }
     }
   }
 

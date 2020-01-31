@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from 'src/app/services/upload.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
 
-const countries: string[] = ['Austria', 'Belgium', 'Cyprus', 'Denmark', 'England', 'Finland', 'France', 'Germany', 'Hungary', 'Italy', 'Luxembourg',
-                              'Netherlands', 'Northern Ireland', 'Portugal', 'Spain'];
+
 const formats: string[] = ['CSV', 'XLS', 'XLXS'];
 @Component({
   selector: 'app-upload-file',
@@ -13,7 +13,7 @@ const formats: string[] = ['CSV', 'XLS', 'XLXS'];
 export class UploadFileComponent implements OnInit {
 
 
-  public countries: string[] = countries;
+  public countries: string[];
   public formats: string[] = formats;
   public fileFormat: string;
   public selectedCountry: string;
@@ -22,9 +22,10 @@ export class UploadFileComponent implements OnInit {
   public uploadForm;
   public disabled = 'disabled';
 
-  constructor(private uploadService: UploadService, private formBuilder: FormBuilder) { }
+  constructor(private uploadService: UploadService, private formBuilder: FormBuilder, private dataService: DataService) { }
 
   ngOnInit() {
+    this.countries = this.dataService.getCountries();
     this.uploadForm = this.formBuilder.group({
       sampleFile: [null, Validators.required],
       filename: [null, Validators.required],

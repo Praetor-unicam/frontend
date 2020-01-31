@@ -48,6 +48,9 @@ const data: CountryData = {
 
 const years: number[] = [2000, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018];
 
+const countries: string[] = ['Austria', 'Belgium', 'Cyprus', 'Denmark', 'England', 'Finland', 'France', 'Germany', 'Hungary', 'Italy', 'Luxembourg',
+                              'Netherlands', 'Northern Ireland', 'Portugal', 'Spain'];
+
 @Injectable({
   providedIn: 'root'
 })
@@ -55,6 +58,10 @@ export class DataService {
 
 
   constructor(private http: HttpClient) { }
+
+  public getCountries(){
+    return countries;
+  }
 
   /*
   public getAvailableYearsFromCountry(country: string): number[]{

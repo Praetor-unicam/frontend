@@ -17,7 +17,7 @@
         </tbody>
       </table>
 </div>
-<div *ngIf="countries.length > 0">
+<div *ngIf="countries.length > 0" style="width: 50%; margin: 0 auto;">
   <div class="row">
     <div>
         <p>Select the year and the type of graph for your analysis</p>
@@ -49,7 +49,7 @@
         <fusioncharts
           *ngIf = 'dataSource != null'
           width="100%"
-          height="100%"
+          height="70%"
           [type]="type"
           [dataFormat]="dataFormat"
           [dataSource]="dataSource"

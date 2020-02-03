@@ -46,6 +46,7 @@ const data: CountryData = {
   ]
 }
 
+
 const years: number[] = [2000, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018];
 
 const countries: string[] = ['Austria', 'Belgium', 'Cyprus', 'Denmark', 'England', 'Finland', 'France', 'Germany', 'Hungary', 'Italy', 'Luxembourg',
@@ -86,7 +87,7 @@ export class DataService {
   }
 
   public getData(country_id: string, year: number): Observable<Crime[]>{
-      return this.http.get<Crime[]>('api/data/' + country_id.substring(0,2) + '/' + year + '/' + country_id);
+      return this.http.get<Crime[]>('api/data/' + country_id.substring(0,2) + '/' + country_id + '?year=' + year);
   }
 
   
@@ -95,7 +96,15 @@ export class DataService {
   }
   
   public compareContriesInYear(countries: Country[], year: number){
-    return this.http.get('/compare');
+    let c = [];
+    let nuts = [];
+    countries.forEach((country: Country) => {
+      c.push(country.id.substring(0,2));
+      nuts.push(country.id);
+    });
+    console.log(c);
+    console.log(nuts);
+    return this.http.get('api/dat/compare/' + year + '?country=' + JSON.stringify(c) + '&nuts=' + JSON.stringify(nuts));
   }
 
 }

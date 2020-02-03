@@ -38,7 +38,6 @@ export class DataviewComponent implements OnInit {
       this.charts = ['Histogram'];
     }
     this.countries.forEach((country: Country) => {
-      /*
       this.dataService.getAvailableYearsFromCountry(country.id)
       .subscribe((years: number[]) => {
         years.forEach((year: number) => {
@@ -51,10 +50,9 @@ export class DataviewComponent implements OnInit {
       error => {
         alert("There was an error getting available years from the database for " + country.label + ". Please try again later.");
       })
-      */
     });
     //this.years = this.dataService.getAvailableYearsFromCountry(this.selectionService.selectedCountry);
-    this.years = [2017, 2018];
+    //this.years = [2017, 2018];
     this.width = window.innerWidth;
     this.height = window.innerHeight - 100;
   }

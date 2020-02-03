@@ -33,12 +33,16 @@ export class MapService {
 
   
   public getMapByID(id: string){
+    /*
     if(id == 'EU'){
       return this.http.get('assets/maps/EU.geojson');
     }
     else{
+      */
       return this.http.get('api/map/' + id);
+      /*
     }
+    */
   }
 
   public getAvailableMaps(country_id: string, ids: string[]){

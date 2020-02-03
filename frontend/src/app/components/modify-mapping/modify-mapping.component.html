@@ -28,6 +28,7 @@
               <div class="form-group">
                   <select class="form-control" id="sel">
                       <!--<option selected>{{mapping.ICCS_category}}</option>-->
+                      <option value="" disabled selected>Select the related ICCS category (optional)</option>
                     <option *ngFor='let category of ICCS_categories'>{{category}}</option>
                   </select>
                 </div> 

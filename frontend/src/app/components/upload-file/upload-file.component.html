@@ -1,0 +1,51 @@
+<div class="container-fluid h-100">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            
+            <h1>P.R.A.E.T.O.R. Upload</h1>
+
+            <!--
+            <form ref='uploadForm' 
+            id='uploadForm' 
+            action='/upload' 
+            method='post' 
+            encType="multipart/form-data">
+            -->
+            <form [formGroup] = "uploadForm" (ngSubmit)="uploadFile()">
+            
+    <div class="form-group">
+        <label for="filename">File name</label>
+        <input type="text" formControlName="filename" class="form-control" id="filename" aria-describedby="filename" placeholder="italy_1">
+    </div>
+    <div class="form-group">
+        <label for="typeselect">File type</label>
+        <select class="form-control" formControlName="format" form="uploadForm" id="format">
+            <option *ngFor="let format of formats">{{format}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="country">Country</label>
+        <select class="form-control" class="form-control" formControlName="country" form="uploadForm" id="country">
+            <option *ngFor="let country of countries">{{country}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="fileform">Data input file</label>
+        <input type="file" class="form-control-file" name="sampleFile" id="fileform" (change)="onFileSelect($event)" />
+    </div>
+    
+    <div class="form-group">
+        <input type='submit' class="btn btn-primary btn-lg btn-block" value='Upload!' [disabled] = "!uploadForm.valid"/>
+    </div>
+</form>
+
+<!--
+<h3 style="text-align: center;"><b>OR</b></h3>
+
+<input type="submit" class="btn btn-danger btn-lg btn-block" value="Return home"
+    onclick="window.location='/';" />
+-->
+        </div>
+    </div>
+</div>

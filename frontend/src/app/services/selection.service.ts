@@ -1,20 +1,34 @@
 import { Injectable } from '@angular/core';
+import { Country } from '../models/Country';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SelectionService {
 
-  public selectedCountry: string;
-  public selectedPath: string[];
+  public countriesForAnalysis: Country[] = [];
+  
+  public selectedUploadCountry: string;
+  public selectedAnalysis: string;
 
   constructor() { }
 
-  public selectCountry(country: string){
-    this.selectedCountry = country;
+  public selectMapCountry(country_id: string, country_label: string){
+    this.countriesForAnalysis.push(new Country(country_label, country_id));
   }
 
-  public selectRegion(map_path: string[]){
-    this.selectedPath = map_path;
+  public removeMapCountry(country: Country){
+    const index = this.countriesForAnalysis.indexOf(country, 0);
+    if (index > -1) {
+      this.countriesForAnalysis.splice(index, 1);
+    }
+  }
+
+  public selectUploadCountry(country: string){
+    this.selectedUploadCountry = country;
+  }
+
+  public selectAnalysisType(type: string){
+    this.selectedAnalysis = type;
   }
 }

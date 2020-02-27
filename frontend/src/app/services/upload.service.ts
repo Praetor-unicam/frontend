@@ -2,7 +2,14 @@ import { Injectable } from '@angular/core';
 import { Endpoint } from '../models/Endpoint';
 import { EndpointStatus } from '../models/EndpointStatus';
 import { CountryStatus } from '../models/CountryStatus';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
+const httpOptions = {
+  headers: new HttpHeaders({
+   'Content-Type': 'multipart/form-data'
+  })
+};
 
 
 const endpoints: Endpoint[] = [
@@ -21,7 +28,7 @@ const statuses: CountryStatus[] = [
 
 export class UploadService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   public getEndpoints(): Endpoint[]{
     return endpoints;
@@ -29,5 +36,10 @@ export class UploadService {
 
   public getCountriesStatus(){
     return statuses;
+  }
+
+  public uploadFile(file: FormData){
+    let body = {dan: 'dan', dandan: 'dandan'}
+    return this.http.post('/upload', file);
   }
 }

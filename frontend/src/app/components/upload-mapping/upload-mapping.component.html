@@ -1,15 +1,50 @@
-<div class="container">
-  <div class="row">
-      <div class="col-md-6 offset-md-3">
-          <h3>Choose File for {{country}} Mapping</h3>
-          <form (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                  <input type="file" name="file" (change)="fileEvent($event)"/>
-              </div>
-              <div class="form-group">
-                  <button class="btn btn-primary">Submit</button>
-              </div>
-          </form>
-      </div>
-  </div>
-</div>
+<div class="container-fluid h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                
+                <h1>P.R.A.E.T.O.R. Upload</h1>
+
+                <form ref='uploadForm' 
+                id='uploadForm' 
+                action='/upload' 
+                method='post' 
+                encType="multipart/form-data">
+                
+        <div class="form-group">
+            <label for="filename">File name</label>
+            <input type="text" name="filename" class="form-control" id="filename" aria-describedby="filename" placeholder="italy_1">
+        </div>
+        <div class="form-group">
+            <label for="typeselect">File type</label>
+            <select class="form-control" name="format" form="uploadForm" id="typeselect">
+                <option value="csv">CSV</option>
+                <option value="xls">XLSX</option>
+                <option value="xlsx">XLS</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select class="form-control" name="country" form="uploadForm" id="country">
+                <option value="austria" *ngFor="let country of countries">{{country}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fileform">Data input file</label>
+            <input type="file" class="form-control-file" name="sampleFile" id="fileform" />
+        </div>
+        
+        <div class="form-group">
+            <input type='submit' class="btn btn-primary btn-lg btn-block" value='Upload!' />
+        </div>
+    </form>
+
+    <!--
+    <h3 style="text-align: center;"><b>OR</b></h3>
+
+    <input type="submit" class="btn btn-danger btn-lg btn-block" value="Return home"
+        onclick="window.location='/';" />
+    -->
+            </div>
+        </div>
+    </div>

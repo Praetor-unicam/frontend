@@ -3,6 +3,8 @@ import { SelectionService } from 'src/app/services/selection.service';
 import { FileService } from 'src/app/services/file.service';
 import { Router } from '@angular/router';
 
+const countries: string[] = ['Austria', 'Belgium', 'Cyprus', 'Denmark', 'England', 'Finland', 'France', 'Germany', 'Hungary', 'Italy', 'Luxembourg',
+                              'Netherlands', 'Northern Ireland', 'Portugal', 'Spain'];
 @Component({
   selector: 'app-upload-mapping',
   templateUrl: './upload-mapping.component.html',
@@ -10,7 +12,8 @@ import { Router } from '@angular/router';
 })
 export class UploadMappingComponent implements OnInit {
 
-  public country: string;
+  //public country: string;
+  public countries: string[] = countries;
 
 
   public fileData = null;
@@ -37,6 +40,6 @@ export class UploadMappingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.country = this.selectionService.selectedCountry;
+    //this.country = this.selectionService.selectedUploadCountry;
   }
 }

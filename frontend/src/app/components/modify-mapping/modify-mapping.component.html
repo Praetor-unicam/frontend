@@ -1,21 +1,40 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Original Category</th>
-      <th scope="col">ICCS Category</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor='let mapping of mappings'>
-      <td>{{mapping.category}}</td>
-      <td>
-          <div class="form-group">
-              <select class="form-control" id="sel">
-                  <option selected>{{mapping.ICCS_category}}</option>
-                <option *ngFor='let category of ICCS_categories'>{{category}}</option>
-              </select>
-            </div> 
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="row"  style="width: 50%; margin: 0 auto;">
+  <p>Select the country</p>
+</div>
+<div class="row" style="width: 50%; margin: 0 auto;">
+  <div class="col-sm-6">
+      <select [(ngModel)]="selectedCountry" class="form-control" id="sel1">
+        <option *ngFor='let country of countries'>{{country}}</option>
+      </select>
+  </div>
+  <div class="col-sm-4">
+      <button class="btn btn-info" (click)="loadMapping()">Load</button>
+  </div>
+</div>
+<div *ngIf="this.mappings">
+    <table class="table table-hover" style="margin-top: 20px;">
+      <thead>
+        <tr>
+          <th scope="col">Original Category</th>
+          <th scope="col">Current ICCS Category</th>
+          <th scope="col">Select ICCS Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let mapping of mappings'>
+          <td>{{mapping.category}}</td>
+          <td>{{mapping.ICCS_category}}</td>
+          <td>
+              <div class="form-group">
+                  <select class="form-control" id="sel">
+                      <!--<option selected>{{mapping.ICCS_category}}</option>-->
+                      <option value="" disabled selected>Select the related ICCS category (optional)</option>
+                    <option *ngFor='let category of ICCS_categories'>{{category}}</option>
+                  </select>
+                </div> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-info" (click) = "uploadMapping()">Upload mapping</button>
+</div>

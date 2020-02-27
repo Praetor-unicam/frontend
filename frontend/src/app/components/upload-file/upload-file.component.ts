@@ -47,9 +47,10 @@ export class UploadFileComponent implements OnInit {
     formData.append('filename', this.uploadForm.get('filename').value);
     formData.append('country', this.uploadForm.get('country').value);
     formData.append('format', this.uploadForm.get('format').value);
+    alert("File " + this.uploadForm.get('filename').value + "." + this.uploadForm.get('format').value + " has been succesfully uploaded.");
     this.uploadService.uploadFile(formData)
       .subscribe((res: any) => {
-        console.log(res);
+        alert("File uploaded succesfully.");
       },
       error => {
         console.log(error)

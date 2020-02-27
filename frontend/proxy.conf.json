@@ -1,10 +1,10 @@
 {
     "/api":
     {
-        "target": "http://10.0.3.112:5000",
+        "target": "http://10.0.3.204:5000",
         "secure": false
     },
-    "/compare":
+    "/upload":
     {
         "target": "http://localhost:5000",
         "secure": false

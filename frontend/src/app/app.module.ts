@@ -32,7 +32,7 @@ const location = window.location.origin;
     { path: 'upload', component: UploadComponent },
     { path: 'dataview', component: DataviewComponent },
     { path: 'upload_mapping', component: UploadMappingComponent },
-    { path: 'modify_mapping', component: ModifyMappingComponent },
+    //{ path: 'modify_mapping', component: ModifyMappingComponent },
     { path: 'upload_file', component: UploadFileComponent }
   ];
 

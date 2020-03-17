@@ -21,32 +21,6 @@ export class ChartService {
   public europeChartData: any;
 
   constructor(private dataService: DataService){
-    let availableCountries = this.dataService.getAvailableCountries();
-    console.log(europe_codes);
-    let codes: any = europe_codes;
-    let chartData: { id: string, value: number, showLabel: number, showhovereffect: string}[] = [];
-    codes.default.forEach((country_code: {id: string, name: string}) => {
-      if(availableCountries.indexOf(country_code.name) > -1){
-        let newChartData = { id: country_code.id, value: 1, showLabel: 0, showhovereffect: '1' };
-        chartData.push(newChartData);
-      }
-      this.europeChartData = chartData;
-      this.chartData = this.europeChartData;
-    });
-    this.refreshChart(this.chartData, EUROPE_NULL_COLOR, '0');
-  }
-
-  
-
-  public getMap(country: string){
-    console.log(country);
-    if(country != 'Europe'){
-      this.refreshChart(null, COUNTRY_NULL_COLOR, '1');
-    }
-    else{
-      this.refreshChart(this.europeChartData, EUROPE_NULL_COLOR, '0');
-    }
-    return this.data;
   }
 
 

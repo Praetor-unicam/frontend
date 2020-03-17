@@ -37,20 +37,24 @@ export class DataviewComponent implements OnInit {
     else{
       this.charts = ['Histogram'];
     }
-    this.countries.forEach((country: Country) => {
-      this.dataService.getAvailableYearsFromCountry(country.id)
-      .subscribe((years: number[]) => {
-        years.forEach((year: number) => {
-          if(!this.years.includes(year)){
-            this.years.push(year);
-            this.years = this.years.sort((n1, n2) => n1 - n2);
+    for(let i = 0; i < this.countries.length; i++){
+      this.dataService.getAvailableYearsFromCountry(this.countries[i].id)
+        .subscribe((years: number[]) => {
+          if(i == 0){
+            this.years = years;
           }
-        })
-      },
-      error => {
-        alert("There was an error getting available years from the database for " + country.label + ". Please try again later.");
-      })
-    });
+          else{
+            let intersection = this.years.filter(x => years.includes(x));
+            this.years = intersection;
+            if(this.years.length == 0){
+              alert("These countries have not a year in common for performing a comparison.");
+            }
+          }
+        },
+        error => {
+          alert("There was an error getting available years from the database for " + this.countries[i].label + ". Please try again later.");
+        });
+    }
     //this.years = this.dataService.getAvailableYearsFromCountry(this.selectionService.selectedCountry);
     //this.years = [2017, 2018];
     this.width = window.innerWidth;

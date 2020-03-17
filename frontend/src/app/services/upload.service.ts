@@ -40,6 +40,6 @@ export class UploadService {
 
   public uploadFile(file: FormData){
     let body = {dan: 'dan', dandan: 'dandan'}
-    return this.http.post('/upload', file);
+    return this.http.post('/api/upload', file);
   }
 }

@@ -92,6 +92,7 @@ export class DataService {
 
   
   public getAvailableYearsFromCountry(country_id: string): Observable<number[]>{
+    console.log(country_id);
     return this.http.get<number[]>('api/years/' + country_id.substring(0,2) + '/' + country_id);
   }
   
